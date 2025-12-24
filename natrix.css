@@ -1,0 +1,29 @@
+/*
+ * Natrix CSS
+ * A lightweight, plug-and-play CSS framework
+ * https://github.com/celionatti/natrix
+ */
+
+/* Core */
+@import url('./src/variables.css');
+@import url('./src/reset.css');
+
+/* Typography */
+@import url('./src/typography.css');
+
+/* Components */
+@import url('./src/buttons.css');
+@import url('./src/forms.css');
+@import url('./src/tables.css');
+@import url('./src/cards.css');
+@import url('./src/modals.css');
+@import url('./src/alerts.css');
+
+/* Layout */
+@import url('./src/grid.css');
+@import url('./src/flex.css');
+
+/* Utilities */
+@import url('./src/spacing.css');
+@import url('./src/colors.css');
+@import url('./src/utilities.css');

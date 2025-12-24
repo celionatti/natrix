@@ -1,0 +1,204 @@
+/*
+ * Natrix CSS - Cards (v2 Redesign)
+ * Modern cards with glassmorphism support and soft shadows
+ */
+
+/* ========== BASE CARD ========== */
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    position: relative;
+}
+
+/* Hover lift effect for interactive cards */
+.card-hover {
+    cursor: pointer;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-200);
+}
+
+/* ========== GLASS CARD (The "Natrix" Signature) ========== */
+.card-glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+/* ========== CARD PARTS ========== */
+.card-header {
+    padding: 1.5rem;
+    background-color: transparent;
+    /* Cleaner look */
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.5rem;
+}
+
+.card-footer {
+    padding: 1rem 1.5rem;
+    background-color: var(--bg-subtle);
+    border-top: 1px solid var(--border-color);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--heading-color);
+    line-height: 1.3;
+}
+
+.card-subtitle {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+.card-text {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+/* ========== CARD IMAGES ========== */
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ========== CARD VARIANTS ========== */
+
+/* Borderless (Clean) */
+.card-borderless {
+    border: none;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Flat (No shadow, just border) */
+.card-flat {
+    box-shadow: none;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+}
+
+/* Gradient Border Card (Premium) */
+.card-gradient-border {
+    position: relative;
+    background: var(--bg-surface);
+    border: none;
+    /* Hide default border */
+    z-index: 1;
+}
+
+.card-gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-xl);
+    padding: 2px;
+    /* Border width */
+    background: var(--gradient-primary);
+    /* The gradient */
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* ========== COLORED CARDS ========== */
+.card-primary {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+}
+
+.card-primary .card-text,
+.card-primary .card-title,
+.card-primary .card-subtitle {
+    color: white;
+}
+
+.card-dark {
+    background: var(--dark-900);
+    border-color: var(--dark-700);
+    color: var(--light-100);
+}
+
+.card-dark .card-title {
+    color: white;
+}
+
+.card-dark .card-subtitle {
+    color: var(--dark-400);
+}
+
+.card-dark .card-text {
+    color: var(--dark-200);
+}
+
+/* ========== WIDGET CARDS (for Admin) ========== */
+.card-stat {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.card-stat-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    background-color: var(--primary-50);
+    color: var(--primary-600);
+}
+
+.card-stat-content {
+    flex: 1;
+}
+
+.card-stat-value {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.card-stat-label {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    font-weight: 500;
+}

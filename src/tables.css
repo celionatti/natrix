@@ -1,0 +1,283 @@
+/*
+ * Natrix CSS - Tables
+ * Table styling with variants and responsive support
+ */
+
+/* ========== BASE TABLE ========== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 1rem;
+    font-size: var(--text-base);
+    color: var(--text-color);
+}
+
+th {
+    font-weight: 600;
+    text-align: left;
+    color: var(--heading-color);
+}
+
+th,
+td {
+    padding: 0.875rem 1rem;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border-color);
+}
+
+thead th {
+    vertical-align: bottom;
+    border-bottom-width: 2px;
+    background-color: var(--bg-subtle);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ========== TABLE VARIANTS ========== */
+
+/* Striped rows */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--dark-50);
+}
+
+/* Hoverable rows */
+.table-hover tbody tr {
+    transition: background-color var(--transition-fast);
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--primary-50);
+}
+
+/* Bordered table */
+.table-bordered,
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid var(--border-color);
+}
+
+.table-bordered thead th {
+    border-bottom-width: 2px;
+}
+
+/* Borderless table */
+.table-borderless th,
+.table-borderless td {
+    border: none;
+}
+
+/* ========== TABLE SIZES ========== */
+
+/* Compact table */
+.table-sm th,
+.table-sm td {
+    padding: 0.5rem 0.75rem;
+}
+
+/* Large table */
+.table-lg th,
+.table-lg td {
+    padding: 1.125rem 1.25rem;
+}
+
+/* ========== COLORED TABLES ========== */
+
+/* Primary */
+.table-primary {
+    --table-bg: var(--primary-50);
+    --table-border: var(--primary-200);
+}
+
+.table-primary thead th {
+    background-color: var(--primary-100);
+    border-color: var(--table-border);
+}
+
+.table-primary th,
+.table-primary td {
+    border-color: var(--table-border);
+}
+
+/* Success */
+.table-success thead th {
+    background-color: var(--success-100);
+}
+
+.table-success tbody tr:nth-of-type(odd) {
+    background-color: var(--success-50);
+}
+
+/* Danger */
+.table-danger thead th {
+    background-color: var(--danger-100);
+}
+
+.table-danger tbody tr:nth-of-type(odd) {
+    background-color: var(--danger-50);
+}
+
+/* Warning */
+.table-warning thead th {
+    background-color: var(--warning-100);
+}
+
+.table-warning tbody tr:nth-of-type(odd) {
+    background-color: var(--warning-50);
+}
+
+/* Info */
+.table-info thead th {
+    background-color: var(--info-100);
+}
+
+.table-info tbody tr:nth-of-type(odd) {
+    background-color: var(--info-50);
+}
+
+/* Dark */
+.table-dark {
+    color: var(--light-100);
+}
+
+.table-dark thead th {
+    background-color: var(--dark-800);
+    color: var(--light-100);
+    border-color: var(--dark-600);
+}
+
+.table-dark th,
+.table-dark td {
+    border-color: var(--dark-700);
+}
+
+.table-dark tbody tr:nth-of-type(odd) {
+    background-color: var(--dark-800);
+}
+
+.table-dark tbody tr:nth-of-type(even) {
+    background-color: var(--dark-900);
+}
+
+/* ========== ROW COLORS ========== */
+tr.table-row-primary {
+    background-color: var(--primary-50);
+}
+
+tr.table-row-success {
+    background-color: var(--success-50);
+}
+
+tr.table-row-danger {
+    background-color: var(--danger-50);
+}
+
+tr.table-row-warning {
+    background-color: var(--warning-50);
+}
+
+tr.table-row-info {
+    background-color: var(--info-50);
+}
+
+/* ========== RESPONSIVE TABLE ========== */
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive>table {
+    margin-bottom: 0;
+}
+
+/* Responsive at breakpoints */
+@media (max-width: 575.98px) {
+    .table-responsive-sm {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .table-responsive-md {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .table-responsive-lg {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* ========== TABLE CAPTION ========== */
+caption {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    color: var(--text-muted);
+    text-align: left;
+    caption-side: bottom;
+}
+
+.caption-top {
+    caption-side: top;
+}
+
+/* ========== FIXED LAYOUT ========== */
+.table-fixed {
+    table-layout: fixed;
+}
+
+/* ========== STICKY HEADER ========== */
+.table-sticky-header thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: var(--bg-subtle);
+}
+
+/* ========== SORTABLE INDICATOR ========== */
+.table-sortable th {
+    cursor: pointer;
+    user-select: none;
+}
+
+.table-sortable th:hover {
+    background-color: var(--dark-100);
+}
+
+.th-sortable::after {
+    content: '↕';
+    margin-left: 0.5rem;
+    opacity: 0.4;
+}
+
+.th-sort-asc::after {
+    content: '↑';
+    opacity: 1;
+}
+
+.th-sort-desc::after {
+    content: '↓';
+    opacity: 1;
+}
+
+/* ========== EMPTY STATE ========== */
+.table-empty td {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-style: italic;
+}

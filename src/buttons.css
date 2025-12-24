@@ -1,0 +1,267 @@
+/*
+ * Natrix CSS - Buttons (v2 Redesign)
+ * Gradient buttons with glow effects and premium feel
+ */
+
+/* ========== BASE BUTTON ========== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.5rem;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: var(--radius-full);
+    /* Pill shape by default */
+    background-color: var(--light-200);
+    color: var(--dark-700);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    background-color: var(--light-300);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
+}
+
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========== GRADIENT VARIANTS (The "Premium" Look) ========== */
+
+/* Primary */
+.btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2), 0 2px 4px -1px rgba(79, 70, 229, 0.1);
+}
+
+.btn-primary:hover {
+    background: var(--gradient-primary-hover);
+    box-shadow: var(--gradient-glow-primary);
+    color: white;
+}
+
+/* Secondary */
+.btn-secondary {
+    background: var(--gradient-secondary);
+    border: none;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(20, 184, 166, 0.2), 0 2px 4px -1px rgba(20, 184, 166, 0.1);
+}
+
+.btn-secondary:hover {
+    background: var(--gradient-secondary-hover);
+    box-shadow: var(--gradient-glow-secondary);
+    color: white;
+}
+
+/* Success */
+.btn-success {
+    background: var(--gradient-success);
+    border: none;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+}
+
+.btn-success:hover {
+    box-shadow: var(--gradient-glow-success);
+    filter: brightness(110%);
+    color: white;
+}
+
+/* Danger */
+.btn-danger {
+    background: var(--gradient-danger);
+    border: none;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(244, 63, 94, 0.2);
+}
+
+.btn-danger:hover {
+    box-shadow: var(--gradient-glow-danger);
+    filter: brightness(110%);
+    color: white;
+}
+
+/* Warning */
+.btn-warning {
+    background: var(--gradient-warning);
+    border: none;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.2);
+}
+
+.btn-warning:hover {
+    filter: brightness(110%);
+    color: white;
+}
+
+/* Info */
+.btn-info {
+    background: var(--gradient-info);
+    border: none;
+    color: white;
+}
+
+.btn-info:hover {
+    filter: brightness(110%);
+    color: white;
+}
+
+/* Dark */
+.btn-dark {
+    background: var(--gradient-dark);
+    border: none;
+    color: white;
+}
+
+.btn-dark:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+/* Light */
+.btn-light {
+    background: white;
+    border: 1px solid var(--light-300);
+    color: var(--dark-700);
+}
+
+.btn-light:hover {
+    background: var(--light-50);
+    border-color: var(--light-400);
+    color: var(--dark-900);
+}
+
+/* ========== OUTLINE VARIANTS ========== */
+/* Updated to be subtle borders, colorful text */
+.btn-outline-primary {
+    background: transparent;
+    border: 1px solid var(--primary-500);
+    color: var(--primary-600);
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-50);
+    color: var(--primary-700);
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+    background: transparent;
+    border: 1px solid var(--secondary-500);
+    color: var(--secondary-600);
+}
+
+.btn-outline-secondary:hover {
+    background: var(--secondary-50);
+    color: var(--secondary-700);
+}
+
+.btn-outline-danger {
+    background: transparent;
+    border: 1px solid var(--danger-500);
+    color: var(--danger-600);
+}
+
+.btn-outline-danger:hover {
+    background: var(--danger-50);
+    color: var(--danger-700);
+}
+
+/* ========== GHOST BUTTONS (Minimalist) ========== */
+.btn-ghost {
+    background: transparent;
+    border-color: transparent;
+    color: var(--dark-600);
+    box-shadow: none;
+}
+
+.btn-ghost:hover {
+    background: var(--dark-50);
+    color: var(--dark-900);
+    transform: none;
+}
+
+/* ========== SIZES ========== */
+.btn-xs {
+    padding: 0.25rem 0.75rem;
+    font-size: var(--text-xs);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: var(--text-xs);
+}
+
+.btn-lg {
+    padding: 0.875rem 2rem;
+    font-size: var(--text-base);
+}
+
+.btn-xl {
+    padding: 1.125rem 2.5rem;
+    font-size: var(--text-lg);
+}
+
+/* ========== SHAPES ========== */
+.btn-square {
+    border-radius: var(--radius-sm);
+}
+
+.btn-rounded {
+    border-radius: var(--radius-md);
+}
+
+.btn-pill {
+    border-radius: var(--radius-full);
+}
+
+/* ========== ICON BUTTONS ========== */
+.btn-icon {
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon.btn-sm {
+    width: 2rem;
+    height: 2rem;
+}
+
+.btn-icon.btn-lg {
+    width: 3rem;
+    height: 3rem;
+}
