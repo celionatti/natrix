@@ -1,0 +1,47 @@
+/*
+ * Natrix CSS - Effects
+ * Premium visual effects like animated borders
+ */
+
+@keyframes rotate-border {
+    to {
+        --border-angle: 360deg;
+    }
+}
+
+.animated-gradient-border {
+    --border-size: 2px;
+    --border-bg: var(--bg-surface);
+
+    position: relative;
+    padding: var(--border-size);
+    background: conic-gradient(from var(--border-angle),
+            var(--primary-500),
+            var(--accent-500),
+            var(--secondary-500),
+            var(--primary-500));
+    border-radius: var(--radius-md);
+    animation: rotate-border 4s linear infinite;
+    z-index: 0;
+}
+
+.animated-gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: var(--border-size);
+    background: var(--border-bg);
+    border-radius: calc(var(--radius-md) - var(--border-size));
+    z-index: -1;
+}
+
+/* Variant: Slow & Subtle */
+.border-subtle {
+    animation-duration: 8s;
+    opacity: 0.8;
+}
+
+/* Variant: Rapid & Vibrant */
+.border-vibrant {
+    animation-duration: 2s;
+    filter: saturate(1.5) brightness(1.2);
+}

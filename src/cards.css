@@ -24,7 +24,7 @@
 .card-hover:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
-    border-color: var(--primary-200);
+    border-color: var(--primary-300);
 }
 
 /* ========== GLASS CARD (The "Natrix" Signature) ========== */
@@ -132,6 +132,9 @@
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
     mask-composite: exclude;
     pointer-events: none;
 }

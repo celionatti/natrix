@@ -63,12 +63,12 @@
 .alert-dark {
     background-color: var(--dark-800);
     border-color: var(--dark-700);
-    color: var(--light-100);
+    color: var(--dark-100);
 }
 
 .alert-light {
-    background-color: var(--light-200);
-    border-color: var(--light-400);
+    background-color: var(--dark-100);
+    border-color: var(--dark-200);
     color: var(--dark-800);
 }
 
@@ -195,7 +195,7 @@
 }
 
 .badge-light {
-    background-color: var(--light-300);
+    background-color: var(--dark-200);
     color: var(--dark-800);
 }
 

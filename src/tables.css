@@ -139,12 +139,12 @@ tbody tr:last-child td {
 
 /* Dark */
 .table-dark {
-    color: var(--light-100);
+    color: var(--dark-100);
 }
 
 .table-dark thead th {
     background-color: var(--dark-800);
-    color: var(--light-100);
+    color: var(--dark-100);
     border-color: var(--dark-600);
 }
 

@@ -9,27 +9,27 @@
 }
 
 .m-1 {
-    margin: var(--space-1);
+    margin: var(--scale-1);
 }
 
 .m-2 {
-    margin: var(--space-2);
+    margin: var(--scale-2);
 }
 
 .m-3 {
-    margin: var(--space-3);
+    margin: var(--scale-3);
 }
 
 .m-4 {
-    margin: var(--space-4);
+    margin: var(--scale-4);
 }
 
 .m-5 {
-    margin: var(--space-5);
+    margin: var(--scale-5);
 }
 
 .m-6 {
-    margin: var(--space-6);
+    margin: var(--scale-6);
 }
 
 .m-auto {
@@ -197,6 +197,22 @@
     margin-bottom: var(--space-6);
 }
 
+.mb-8 {
+    margin-bottom: var(--space-8);
+}
+
+.mb-10 {
+    margin-bottom: var(--space-10);
+}
+
+.mb-12 {
+    margin-bottom: var(--space-12);
+}
+
+.mb-16 {
+    margin-bottom: var(--space-16);
+}
+
 .mb-auto {
     margin-bottom: auto;
 }
@@ -260,31 +276,42 @@
 }
 
 .p-1 {
-    padding: var(--space-1);
+    padding: var(--scale-1);
 }
 
 .p-2 {
-    padding: var(--space-2);
+    padding: var(--scale-2);
 }
 
 .p-3 {
-    padding: var(--space-3);
+    padding: var(--scale-3);
 }
 
 .p-4 {
-    padding: var(--space-4);
+    padding: var(--scale-4);
 }
 
 .p-5 {
-    padding: var(--space-5);
+    padding: var(--scale-5);
 }
 
 .p-6 {
-    padding: var(--space-6);
+    padding: var(--scale-6);
 }
 
-.p-8 {
-    padding: var(--space-8);
+/* Vertical Rhythm Utilities */
+.py-lh {
+    padding-top: 1lh;
+    padding-bottom: 1lh;
+}
+
+.my-lh {
+    margin-top: 1lh;
+    margin-bottom: 1lh;
+}
+
+.gap-ch {
+    gap: 1ch;
 }
 
 /* Padding - Horizontal */
@@ -339,16 +366,6 @@
     padding-bottom: var(--space-2);
 }
 
-.py-3 {
-    padding-top: var(--space-3);
-    padding-bottom: var(--space-3);
-}
-
-.py-4 {
-    padding-top: var(--space-4);
-    padding-bottom: var(--space-4);
-}
-
 .py-5 {
     padding-top: var(--space-5);
     padding-bottom: var(--space-5);
@@ -357,6 +374,21 @@
 .py-6 {
     padding-top: var(--space-6);
     padding-bottom: var(--space-6);
+}
+
+.py-8 {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+}
+
+.py-12 {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+}
+
+.py-16 {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
 }
 
 /* Padding - Individual sides */

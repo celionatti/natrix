@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natrix Modern Demo</title>
+    <link rel="stylesheet" href="../src/variables.css">
+    <link rel="stylesheet" href="../src/reset.css">
+    <link rel="stylesheet" href="../src/typography.css">
+    <link rel="stylesheet" href="../src/colors.css">
+    <link rel="stylesheet" href="../src/spacing.css">
+    <link rel="stylesheet" href="../src/effects.css">
+    <link rel="stylesheet" href="../src/buttons.css">
+    <link rel="stylesheet" href="../src/cards.css">
+    <style>
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-color);
+            padding: 4ch;
+            max-width: var(--ch-width);
+            margin: 0 auto;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2lh;
+            margin-top: 2lh;
+        }
+
+        .dark-toggle {
+            position: fixed;
+            top: 2ch;
+            right: 2ch;
+            padding: 1ch 2ch;
+            background: var(--primary-500);
+            color: white;
+            border: none;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="dark-toggle" onclick="document.documentElement.classList.toggle('dark')">Toggle Dark Mode</button>
+
+    <header>
+        <h1>Natrix CSS <span class="text-primary">Modern</span></h1>
+        <p class="lead">Built with OKLCH, modern units (ch, lh, vw), and premium effects.</p>
+    </header>
+
+    <main>
+        <section class="my-lh">
+            <h2>Animated Gradient Border</h2>
+            <div class="demo-grid">
+                <div class="animated-gradient-border p-4">
+                    <h3>Standard Effect</h3>
+                    <p>This box has an animated gradient border using conic-gradient and CSS @property.</p>
+                </div>
+                <div class="animated-gradient-border border-vibrant p-4">
+                    <h3>Vibrant & Fast</h3>
+                    <p>A more intense version of the animation for accent components.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-lh">
+            <h2>OKLCH Color Palette</h2>
+            <div class="demo-grid" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));">
+                <div class="bg-primary p-2 text-center rounded">Primary</div>
+                <div class="bg-secondary p-2 text-center rounded">Secondary</div>
+                <div class="bg-success p-2 text-center rounded">Success</div>
+                <div class="bg-danger p-2 text-center rounded">Danger</div>
+                <div class="bg-warning p-2 text-center rounded">Warning</div>
+                <div class="bg-info p-2 text-center rounded">Info</div>
+            </div>
+        </section>
+
+        <section class="my-lh">
+            <h2>Modern Spacing & Width</h2>
+            <p>This entire layout is constrained to <code>var(--ch-width)</code> which is 65 characters wide—the optimal
+                width for readability.</p>
+            <p>Vertical spacing is controlled via <code>lh</code> (line-height) units, ensuring a consistent vertical
+                rhythm.</p>
+        </section>
+    </main>
+
+    <script>
+        // Check system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // document.documentElement.classList.add('dark');
+        }
+    </script>
+</body>
+
+</html>

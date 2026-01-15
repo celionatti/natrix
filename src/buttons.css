@@ -23,7 +23,7 @@
     border: 1px solid transparent;
     border-radius: var(--radius-full);
     /* Pill shape by default */
-    background-color: var(--light-200);
+    background-color: var(--dark-100);
     color: var(--dark-700);
     transition: all var(--transition-normal);
     position: relative;
@@ -31,7 +31,7 @@
 }
 
 .btn:hover {
-    background-color: var(--light-300);
+    background-color: var(--dark-200);
     transform: translateY(-2px);
     text-decoration: none;
 }
@@ -151,13 +151,13 @@
 /* Light */
 .btn-light {
     background: white;
-    border: 1px solid var(--light-300);
+    border: 1px solid var(--dark-200);
     color: var(--dark-700);
 }
 
 .btn-light:hover {
-    background: var(--light-50);
-    border-color: var(--light-400);
+    background: var(--dark-50);
+    border-color: var(--dark-300);
     color: var(--dark-900);
 }
 

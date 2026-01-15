@@ -24,6 +24,7 @@
 @import url('./src/flex.css');
 
 /* Utilities */
+@import url('./src/effects.css');
 @import url('./src/spacing.css');
 @import url('./src/colors.css');
 @import url('./src/utilities.css');

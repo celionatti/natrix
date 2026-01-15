@@ -43,12 +43,12 @@
 /* ========== BACKGROUND COLORS (SOLID) ========== */
 .bg-primary {
     background-color: var(--primary-500);
-    color: white;
+    color: oklch(0.98 0.01 var(--primary-h));
 }
 
 .bg-secondary {
     background-color: var(--secondary-500);
-    color: white;
+    color: oklch(0.98 0.01 var(--secondary-h));
 }
 
 .bg-success {
@@ -63,6 +63,7 @@
 
 .bg-warning {
     background-color: var(--warning-500);
+    color: oklch(0.2 0.04 var(--warning-h));
 }
 
 .bg-info {
@@ -72,11 +73,11 @@
 
 .bg-dark {
     background-color: var(--dark-900);
-    color: white;
+    color: var(--dark-50);
 }
 
 .bg-light {
-    background-color: var(--light-100);
+    background-color: var(--dark-100);
     color: var(--dark-900);
 }
 
