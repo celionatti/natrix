@@ -161,7 +161,7 @@ input[type="radio"] {
     margin-right: 0.5rem;
     padding: 0;
     vertical-align: middle;
-    background-color: var(--light-50);
+    background-color: white;
     border: 2px solid var(--dark-300);
     cursor: pointer;
     transition: all var(--transition-fast);
@@ -238,6 +238,9 @@ input[type="radio"]:focus {
     border-radius: var(--radius-full);
     cursor: pointer;
     transition: background-color var(--transition-fast);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .form-switch input[type="checkbox"]::before {
@@ -255,7 +258,6 @@ input[type="radio"]:focus {
 
 .form-switch input[type="checkbox"]:checked {
     background-color: var(--primary-500);
-    background-image: none;
 }
 
 .form-switch input[type="checkbox"]:checked::before {

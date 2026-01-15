@@ -51,10 +51,14 @@
     --warning-600: oklch(0.62 0.15 var(--warning-h));
     --warning-800: oklch(0.42 0.15 var(--warning-h));
 
-    --info-h: 225;
-    --info-50: oklch(0.97 0.02 var(--info-h));
-    --info-500: oklch(0.68 0.14 var(--info-h));
-    --info-800: oklch(0.38 0.14 var(--info-h));
+    --info-h: 195;
+    --info-50: oklch(0.97 0.03 var(--info-h));
+    --info-100: oklch(0.92 0.05 var(--info-h));
+    --info-200: oklch(0.85 0.08 var(--info-h));
+    --info-500: oklch(0.65 0.18 var(--info-h));
+    --info-600: oklch(0.55 0.18 var(--info-h));
+    --info-700: oklch(0.45 0.18 var(--info-h));
+    --info-800: oklch(0.35 0.18 var(--info-h));
 
     --purple-h: 285;
     --purple-50: oklch(0.97 0.02 var(--purple-h));
@@ -121,6 +125,7 @@
     --gradient-success: linear-gradient(135deg, var(--success-500), var(--success-700));
     --gradient-danger: linear-gradient(135deg, var(--danger-500), var(--danger-700));
     --gradient-warning: linear-gradient(135deg, var(--warning-500), var(--warning-600));
+    --gradient-info: linear-gradient(135deg, var(--info-500), var(--info-700));
     --gradient-dark: linear-gradient(135deg, var(--dark-700), var(--dark-900));
 
     /* ========== GLOW EFFECTS (OKLCH) ========== */
