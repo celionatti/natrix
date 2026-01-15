@@ -7,6 +7,7 @@
 /* Core */
 @import url('./base/variables.css');
 @import url('./base/reset.css');
+@import url('./base/backgrounds.css');
 
 /* Typography */
 @import url('./base/typography.css');
@@ -22,11 +23,12 @@
 @import url('./components/breadcrumbs.css');
 
 /* Layout */
-@import url('./components/grid.css');
-@import url('./components/flex.css');
+@import url('./layout/flex.css');
+@import url('./layout/grid.css');
+
 /* Utilities */
-@import url('./components/effects.css');
-@import url('./components/spacing.css');
-@import url('./components/colors.css');
-@import url('./components/backgrounds.css');
-@import url('./components/utilities.css');
+@import url('./utilities/containers.css');
+@import url('./utilities/effects.css');
+@import url('./utilities/spacing.css');
+@import url('./utilities/colors.css');
+@import url('./utilities/utilities.css');
