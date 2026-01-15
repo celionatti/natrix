@@ -1,0 +1,89 @@
+/*
+ * Natrix CSS - Pagination
+ * Pagination component for navigating through content
+ */
+
+/* ========== PAGINATION BASE ========== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-surface);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.pagination-item:hover:not(.disabled):not(.active) {
+    background-color: var(--primary-50);
+    color: var(--primary-700);
+    border-color: var(--primary-500);
+}
+
+.pagination-item.active {
+    background-color: var(--primary-500);
+    color: white;
+    border-color: var(--primary-500);
+    pointer-events: none;
+}
+
+.pagination-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ========== PAGINATION SIZES ========== */
+.pagination-sm .pagination-item {
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.5rem;
+    font-size: var(--text-sm);
+}
+
+.pagination-lg .pagination-item {
+    min-width: 3rem;
+    height: 3rem;
+    padding: 0 1rem;
+    font-size: var(--text-lg);
+}
+
+/* ========== PAGINATION VARIANTS ========== */
+.pagination-rounded .pagination-item {
+    border-radius: var(--radius-full);
+}
+
+.pagination-simple {
+    gap: 0;
+}
+
+.pagination-simple .pagination-item {
+    border-radius: 0;
+    border-right: none;
+}
+
+.pagination-simple .pagination-item:first-child {
+    border-top-left-radius: var(--radius-md);
+    border-bottom-left-radius: var(--radius-md);
+}
+
+.pagination-simple .pagination-item:last-child {
+    border-top-right-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+    border-right: 1px solid var(--border-color);
+}

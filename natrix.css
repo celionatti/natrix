@@ -12,12 +12,15 @@
 @import url('./src/typography.css');
 
 /* Components */
+@import url('./src/navbar.css');
 @import url('./src/buttons.css');
 @import url('./src/forms.css');
 @import url('./src/tables.css');
 @import url('./src/cards.css');
 @import url('./src/modals.css');
 @import url('./src/alerts.css');
+@import url('./src/pagination.css');
+@import url('./src/breadcrumbs.css');
 
 /* Layout */
 @import url('./src/grid.css');

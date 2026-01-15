@@ -1,0 +1,57 @@
+/*
+ * Natrix CSS - Breadcrumbs
+ * Breadcrumb navigation component
+ */
+
+/* ========== BREADCRUMB BASE ========== */
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    list-style: none;
+    align-items: center;
+}
+
+.breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.breadcrumb-item a {
+    color: var(--primary-600);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.breadcrumb-item a:hover {
+    color: var(--primary-700);
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: '/';
+    color: var(--text-muted);
+}
+
+/* Alternative separators */
+.breadcrumb-chevron .breadcrumb-item+.breadcrumb-item::before {
+    content: '›';
+}
+
+.breadcrumb-arrow .breadcrumb-item+.breadcrumb-item::before {
+    content: '→';
+}
+
+.breadcrumb-dot .breadcrumb-item+.breadcrumb-item::before {
+    content: '•';
+}

@@ -1,0 +1,82 @@
+/*
+ * Natrix CSS - Containers
+ * Container and section components
+ */
+
+/* ========== CONTAINER BASE ========== */
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Container breakpoints */
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
+/* ========== FLUID CONTAINER ========== */
+.container-fluid {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* ========== SECTION ========== */
+.section {
+    padding: 4rem 0;
+}
+
+.section-sm {
+    padding: 2rem 0;
+}
+
+.section-lg {
+    padding: 6rem 0;
+}
+
+.section-xl {
+    padding: 8rem 0;
+}
+
+/* ========== DIVIDER ========== */
+.divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 2rem 0;
+}
+
+.divider-vertical {
+    width: 1px;
+    height: auto;
+    background-color: var(--border-color);
+    margin: 0 2rem;
+}

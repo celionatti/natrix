@@ -5,11 +5,42 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initNavbar();
   initModals();
   initSidebar();
   initDismissibles();
   initDropdowns();
 });
+
+/* ========== NAVBAR ========== */
+function initNavbar() {
+  const navbarTogglers = document.querySelectorAll('.navbar-toggler');
+
+  navbarTogglers.forEach(toggler => {
+    toggler.addEventListener('click', () => {
+      const navbar = toggler.closest('.navbar');
+      const navbarNav = navbar.querySelector('.navbar-nav');
+
+      if (navbarNav) {
+        navbarNav.classList.toggle('show');
+        toggler.setAttribute('aria-expanded', navbarNav.classList.contains('show'));
+      }
+    });
+  });
+
+  // Close navbar when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.navbar')) {
+      document.querySelectorAll('.navbar-nav.show').forEach(nav => {
+        nav.classList.remove('show');
+        const toggler = nav.closest('.navbar').querySelector('.navbar-toggler');
+        if (toggler) {
+          toggler.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  });
+}
 
 /* ========== MODALS ========== */
 function initModals() {
@@ -60,7 +91,7 @@ function openModal(modalId) {
     backdrop.classList.add('show');
     modal.classList.add('show');
   }, 10);
-  
+
   document.body.style.overflow = 'hidden'; // Prevent body scroll
 }
 
@@ -82,13 +113,13 @@ function closeModal(modal) {
 function initSidebar() {
   const toggles = document.querySelectorAll('[data-toggle="sidebar"]');
   const overlays = document.querySelectorAll('.sidebar-overlay');
-  
+
   toggles.forEach(toggle => {
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
       const targetId = toggle.getAttribute('data-target');
       const sidebar = document.querySelector(targetId) || document.querySelector('.sidebar');
-      
+
       if (sidebar) {
         sidebar.classList.toggle('show');
         createSidebarOverlay(sidebar);
@@ -100,7 +131,7 @@ function initSidebar() {
 function createSidebarOverlay(sidebar) {
   // Check if overlay exists
   let overlay = document.querySelector('.sidebar-overlay');
-  
+
   if (sidebar.classList.contains('show')) {
     if (!overlay) {
       overlay = document.createElement('div');
@@ -115,16 +146,16 @@ function createSidebarOverlay(sidebar) {
       overlay.style.zIndex = '1040'; // Just below sidebar (1045)
       overlay.style.opacity = '0';
       overlay.style.transition = 'opacity 0.3s';
-      
+
       document.body.appendChild(overlay);
-      
+
       // Close sidebar on click
       overlay.addEventListener('click', () => {
         sidebar.classList.remove('show');
         overlay.style.opacity = '0';
         setTimeout(() => overlay.remove(), 300);
       });
-      
+
       // Fade in
       setTimeout(() => overlay.style.opacity = '1', 10);
     }
@@ -139,7 +170,7 @@ function createSidebarOverlay(sidebar) {
 /* ========== DISMISSIBLES ========== */
 function initDismissibles() {
   const dismissals = document.querySelectorAll('[data-dismiss="alert"]');
-  
+
   dismissals.forEach(btn => {
     btn.addEventListener('click', () => {
       const alert = btn.closest('.alert');
@@ -156,7 +187,7 @@ function initDismissibles() {
 /* ========== DROPDOWNS ========== */
 function initDropdowns() {
   const dropdowns = document.querySelectorAll('.dropdown-toggle');
-  
+
   dropdowns.forEach(toggle => {
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
