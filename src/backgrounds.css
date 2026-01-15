@@ -1,0 +1,223 @@
+/*
+ * Natrix CSS - Colors Extended
+ * Comprehensive background color utilities for all shades
+ */
+
+/* ========== PRIMARY BACKGROUNDS ========== */
+.bg-primary-50 {
+    background-color: var(--primary-50);
+    color: var(--primary-900);
+}
+
+.bg-primary-100 {
+    background-color: var(--primary-100);
+    color: var(--primary-900);
+}
+
+.bg-primary-200 {
+    background-color: var(--primary-200);
+    color: var(--primary-900);
+}
+
+.bg-primary-300 {
+    background-color: var(--primary-300);
+    color: var(--primary-900);
+}
+
+.bg-primary-400 {
+    background-color: var(--primary-400);
+    color: white;
+}
+
+.bg-primary-500 {
+    background-color: var(--primary-500);
+    color: white;
+}
+
+.bg-primary-600 {
+    background-color: var(--primary-600);
+    color: white;
+}
+
+.bg-primary-700 {
+    background-color: var(--primary-700);
+    color: white;
+}
+
+.bg-primary-800 {
+    background-color: var(--primary-800);
+    color: white;
+}
+
+.bg-primary-900 {
+    background-color: var(--primary-900);
+    color: white;
+}
+
+/* ========== SECONDARY BACKGROUNDS ========== */
+.bg-secondary-50 {
+    background-color: var(--secondary-50);
+    color: var(--secondary-900);
+}
+
+.bg-secondary-100 {
+    background-color: var(--secondary-100);
+    color: var(--secondary-900);
+}
+
+.bg-secondary-200 {
+    background-color: var(--secondary-200);
+    color: var(--secondary-900);
+}
+
+.bg-secondary-300 {
+    background-color: var(--secondary-300);
+    color: var(--secondary-900);
+}
+
+.bg-secondary-400 {
+    background-color: var(--secondary-400);
+    color: white;
+}
+
+.bg-secondary-500 {
+    background-color: var(--secondary-500);
+    color: white;
+}
+
+.bg-secondary-600 {
+    background-color: var(--secondary-600);
+    color: white;
+}
+
+.bg-secondary-700 {
+    background-color: var(--secondary-700);
+    color: white;
+}
+
+.bg-secondary-800 {
+    background-color: var(--secondary-800);
+    color: white;
+}
+
+.bg-secondary-900 {
+    background-color: var(--secondary-900);
+    color: white;
+}
+
+/* ========== NEUTRAL BACKGROUNDS ========== */
+.bg-dark-50 {
+    background-color: var(--dark-50);
+    color: var(--dark-900);
+}
+
+.bg-dark-100 {
+    background-color: var(--dark-100);
+    color: var(--dark-900);
+}
+
+.bg-dark-200 {
+    background-color: var(--dark-200);
+    color: var(--dark-900);
+}
+
+.bg-dark-300 {
+    background-color: var(--dark-300);
+    color: var(--dark-900);
+}
+
+.bg-dark-400 {
+    background-color: var(--dark-400);
+    color: white;
+}
+
+.bg-dark-500 {
+    background-color: var(--dark-500);
+    color: white;
+}
+
+.bg-dark-600 {
+    background-color: var(--dark-600);
+    color: white;
+}
+
+.bg-dark-700 {
+    background-color: var(--dark-700);
+    color: white;
+}
+
+.bg-dark-800 {
+    background-color: var(--dark-800);
+    color: white;
+}
+
+.bg-dark-900 {
+    background-color: var(--dark-900);
+    color: white;
+}
+
+.bg-dark-950 {
+    background-color: var(--dark-950);
+    color: white;
+}
+
+/* ========== EXTENDED PALETTE BACKGROUNDS ========== */
+.bg-purple-50 {
+    background-color: var(--purple-50);
+    color: var(--purple-800);
+}
+
+.bg-purple-500 {
+    background-color: var(--purple-500);
+    color: white;
+}
+
+.bg-purple-800 {
+    background-color: var(--purple-800);
+    color: white;
+}
+
+.bg-pink-50 {
+    background-color: var(--pink-50);
+    color: var(--pink-800);
+}
+
+.bg-pink-500 {
+    background-color: var(--pink-500);
+    color: white;
+}
+
+.bg-pink-800 {
+    background-color: var(--pink-800);
+    color: white;
+}
+
+.bg-orange-50 {
+    background-color: var(--orange-50);
+    color: var(--orange-800);
+}
+
+.bg-orange-500 {
+    background-color: var(--orange-500);
+    color: white;
+}
+
+.bg-orange-800 {
+    background-color: var(--orange-800);
+    color: white;
+}
+
+.bg-teal-50 {
+    background-color: var(--teal-50);
+    color: var(--teal-800);
+}
+
+.bg-teal-500 {
+    background-color: var(--teal-500);
+    color: white;
+}
+
+.bg-teal-800 {
+    background-color: var(--teal-800);
+    color: white;
+}
