@@ -65,15 +65,16 @@
   <div class="container py-8">
     <header class="text-center mb-16 relative">
       <div class="inline-block mb-4">
-        <span class="badge badge-pill badge-primary-subtle text-primary font-bold tracking-wider uppercase text-xs">v2.0
-          Released</span>
+        <span class="badge badge-pill badge-primary-subtle text-primary font-bold tracking-wider uppercase text-xs">v2.1
+          Modern</span>
       </div>
       <h1 class="text-6xl font-bold mb-4 tracking-tight text-gradient-primary">Natrix CSS</h1>
-      <p class="lead max-w-2xl mx-auto mb-8 text-xl">A premium, lightweight CSS framework with glassmorphism, gradients,
-        and modern aesthetics.</p>
+      <p class="lead max-w-2xl mx-auto mb-8 text-xl">Production-ready, ultra-modern CSS framework powered by Container
+        Queries, OKLCH, and Subgrid.</p>
       <div class="flex flex-center gap-4">
-        <a href="#components" class="btn btn-lg btn-primary shadow-colored-primary">Get Started</a>
-        <a href="admin.html" class="btn btn-lg btn-outline-secondary">View Admin Dashboard</a>
+        <a href="#components" class="btn btn-lg btn-primary btn-shimmer btn-magnetic shadow-colored-primary">Explore
+          Components</a>
+        <a href="admin.html" class="btn btn-lg btn-outline-secondary">Dashboard Pro</a>
       </div>
     </header>
 
@@ -85,10 +86,10 @@
       <div class="card card-glass mb-8">
         <div class="card-body">
           <div class="flex flex-wrap gap-4 mb-8 items-center justify-center">
-            <button class="btn btn-primary">Primary Action</button>
-            <button class="btn btn-secondary">Secondary</button>
-            <button class="btn btn-success">Success</button>
-            <button class="btn btn-danger">Danger Zone</button>
+            <button class="btn btn-primary btn-shimmer">Shimmer Primary</button>
+            <button class="btn btn-secondary btn-magnetic">Magnetic Secondary</button>
+            <button class="btn btn-success btn-animated">Animated Success</button>
+            <button class="btn btn-danger btn-shimmer">Danger Shimmer</button>
             <button class="btn btn-warning">Warning</button>
             <button class="btn btn-info">Info</button>
             <button class="btn btn-dark">Dark Mode</button>
@@ -97,58 +98,47 @@
           <div class="divider"></div>
 
           <div class="flex flex-wrap gap-4 items-center justify-center">
-            <button class="btn btn-outline-primary">Outline Primary</button>
+            <button class="btn btn-outline-primary btn-magnetic">Magnetic Outline</button>
             <button class="btn btn-outline-danger">Outline Danger</button>
-            <button class="btn btn-ghost">Ghost Button</button>
-            <button class="btn btn-primary btn-icon text-lg">★</button>
-            <button class="btn btn-secondary btn-icon text-lg">♥</button>
+            <button class="btn btn-ghost btn-shimmer">Ghost Shimmer</button>
+            <button class="btn btn-primary btn-icon text-lg btn-magnetic">★</button>
+            <button class="btn btn-secondary btn-icon text-lg btn-shimmer">♥</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CARDS -->
+    <!-- CONTAINER QUERIES SHOWCASE -->
     <section class="demo-section">
-      <h2 class="demo-title text-4xl">Cards</h2>
-      <p class="text-muted mb-6">Glassmorphism cards with backdrop blur and soft shadows.</p>
+      <h2 class="demo-title text-4xl">Adaptive Layouts</h2>
+      <p class="text-muted mb-6">Powered by Container Queries. These cards change layout based on their own width, not
+        the screen size.</p>
 
-      <div class="row gap-6">
+      <div class="row">
         <div class="col-md-4">
-          <div class="card card-glass card-hover h-full">
-            <div class="card-header">
-              <span class="card-title m-0">Glass Card</span>
-              <button class="btn btn-xs btn-icon btn-ghost">⋮</button>
-            </div>
+          <div class="card card-adaptive card-glass">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=400"
+              class="card-img-top" alt="Demo">
             <div class="card-body">
-              <p class="card-text">This card uses the <code>.card-glass</code> class to apply a backdrop blur effect,
-                perfect for overlaying on complex backgrounds.</p>
-              <button class="btn btn-sm btn-primary w-full mt-4">Action</button>
+              <h5 class="card-title">Adaptive Card</h5>
+              <p class="card-text">Try resizing this column. It will automatically switch from vertical to horizontal
+                layout.</p>
+              <button class="btn btn-sm btn-primary">Check it out</button>
             </div>
           </div>
         </div>
-
-        <div class="col-md-4">
-          <div class="card card-gradient-border card-hover h-full">
+        <div class="col-md-8">
+          <div class="card card-adaptive card-glass">
+            <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=400"
+              class="card-img-top" alt="Demo">
             <div class="card-body">
-              <h5 class="card-title text-gradient-primary">Gradient Border</h5>
-              <p class="card-text">A unique card style with a gradient border mask. Great for highlighting featured
-                content.</p>
-              <div class="mt-4 flex items-center gap-2">
-                <div class="avatar avatar-sm"><img src="https://i.pravatar.cc/150?img=12" alt="Avatar"></div>
-                <span class="text-sm font-bold text-muted">Author Name</span>
+              <h5 class="card-title">Wide Container</h5>
+              <p class="card-text">Because this container is wider, the card automatically adopts a horizontal layout
+                using <code>@container</code> rules.</p>
+              <div class="flex gap-2">
+                <button class="btn btn-sm btn-secondary">Details</button>
+                <button class="btn btn-sm btn-outline-primary">Gallery</button>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card card-primary card-hover h-full">
-            <div class="card-body flex flex-col justify-between h-full">
-              <div>
-                <h5 class="card-title text-white">Primary Card</h5>
-                <p class="card-text text-white opacity-90">Full colored cards for emphasis logic.</p>
-              </div>
-              <button class="btn btn-sm btn-light mt-4 w-full text-primary font-bold">Learn More</button>
             </div>
           </div>
         </div>

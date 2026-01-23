@@ -1,0 +1,92 @@
+/*
+ * Natrix CSS - Container Queries
+ * Modern responsive layout utilities based on container size
+ */
+
+/* ========== CONTANER TYPE ========== */
+.container-type-size {
+    container-type: size;
+}
+
+.container-type-inline {
+    container-type: inline-size;
+}
+
+/* ========== CONTAINER NAME ========== */
+.container-name-card {
+    container-name: card;
+}
+
+.container-name-sidebar {
+    container-name: sidebar;
+}
+
+/* ========== CONTAINER QUERIES - UTILITIES ========== */
+
+/* Default container size utilities */
+@container (min-width: 24rem) {
+    .cq-sm-block {
+        display: block;
+    }
+
+    .cq-sm-flex {
+        display: flex;
+    }
+
+    .cq-sm-grid {
+        display: grid;
+    }
+
+    .cq-sm-hidden {
+        display: none;
+    }
+}
+
+@container (min-width: 32rem) {
+    .cq-md-block {
+        display: block;
+    }
+
+    .cq-md-flex {
+        display: flex;
+    }
+
+    .cq-md-grid {
+        display: grid;
+    }
+
+    .cq-md-hidden {
+        display: none;
+    }
+}
+
+@container (min-width: 48rem) {
+    .cq-lg-block {
+        display: block;
+    }
+
+    .cq-lg-flex {
+        display: flex;
+    }
+
+    .cq-lg-grid {
+        display: grid;
+    }
+
+    .cq-lg-hidden {
+        display: none;
+    }
+}
+
+/* Example: Self-adjusting card content */
+@container card (min-width: 400px) {
+    .card-cq-layout {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: var(--space-4);
+    }
+
+    .card-cq-img {
+        aspect-ratio: 1;
+    }
+}

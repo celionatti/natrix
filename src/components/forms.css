@@ -72,7 +72,7 @@ select:focus,
 .form-control:focus {
     outline: none;
     border-color: var(--primary-500);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 0 4px oklch(0.6 0.16 var(--primary-h) / 0.15);
 }
 
 input::placeholder,
@@ -371,7 +371,7 @@ input:valid:not(:placeholder-shown):focus,
 textarea:valid:not(:placeholder-shown):focus,
 select:valid:focus {
     border-color: var(--success-500);
-    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+    box-shadow: 0 0 0 4px oklch(0.6 0.16 var(--success-h) / 0.15);
 }
 
 .is-invalid,
@@ -386,7 +386,7 @@ input:invalid:not(:placeholder-shown):focus,
 textarea:invalid:not(:placeholder-shown):focus,
 select:invalid:focus {
     border-color: var(--danger-500);
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+    box-shadow: 0 0 0 4px oklch(0.6 0.18 var(--danger-h) / 0.15);
 }
 
 .valid-feedback {

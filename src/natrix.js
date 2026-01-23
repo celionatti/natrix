@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSidebar();
   initDismissibles();
   initDropdowns();
+  initMagneticButtons();
 });
 
 /* ========== NAVBAR ========== */
@@ -38,6 +39,18 @@ function initNavbar() {
           toggler.setAttribute('aria-expanded', 'false');
         }
       });
+    }
+  });
+
+  // Scrolled navbar state
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
     }
   });
 }
@@ -205,5 +218,23 @@ function initDropdowns() {
         menu.classList.remove('show');
       });
     }
+  });
+}
+/* ========== MAGNETIC BUTTONS ========== */
+function initMagneticButtons() {
+  const buttons = document.querySelectorAll('.btn-magnetic');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
   });
 }

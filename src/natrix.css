@@ -25,6 +25,7 @@
 /* Layout */
 @import url('./layout/flex.css');
 @import url('./layout/grid.css');
+@import url('./layout/container-queries.css');
 
 /* Utilities */
 @import url('./utilities/containers.css');

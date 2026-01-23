@@ -5,16 +5,25 @@
 
 /* ========== NAVBAR BASE ========== */
 .navbar {
-    background-color: var(--bg-surface);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
     border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
+    padding: 0.75rem 0;
     position: relative;
-    z-index: 10;
+    z-index: 100;
+    transition: background-color var(--transition-normal), padding var(--transition-normal);
 }
 
 .navbar.navbar-sticky {
     position: sticky;
     top: 0;
+}
+
+.navbar.navbar-scrolled {
+    background-color: var(--bg-surface);
+    padding: 0.5rem 0;
+    box-shadow: var(--shadow-md);
 }
 
 .navbar.navbar-fixed {
@@ -91,11 +100,12 @@
 .navbar-nav a.active::after {
     content: '';
     position: absolute;
-    bottom: -0.5rem;
+    bottom: -0.25rem;
     left: 0;
     right: 0;
     height: 2px;
     background-color: var(--primary-600);
+    border-radius: var(--radius-full);
 }
 
 .navbar-dark .navbar-nav a,
