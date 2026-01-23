@@ -12,7 +12,9 @@
     flex-wrap: wrap;
 }
 
-.pagination-item {
+.pagination-item,
+.page-item,
+.page-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -29,20 +31,26 @@
     font-weight: 500;
 }
 
-.pagination-item:hover:not(.disabled):not(.active) {
+.pagination-item:hover:not(.disabled):not(.active),
+.page-item:hover:not(.disabled):not(.active),
+.page-link:hover:not(.disabled):not(.active) {
     background-color: var(--primary-50);
     color: var(--primary-700);
     border-color: var(--primary-500);
 }
 
-.pagination-item.active {
+.pagination-item.active,
+.page-item.active,
+.page-link.active {
     background-color: var(--primary-500);
     color: white;
     border-color: var(--primary-500);
     pointer-events: none;
 }
 
-.pagination-item.disabled {
+.pagination-item.disabled,
+.page-item.disabled,
+.page-link.disabled {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
