@@ -2,18 +2,18 @@
     /* ========== MODERN COLOR PALETTE (OKLCH) ========== */
     /* OKLCH: Lightness, Chroma, Hue */
 
-    --primary-h: 258;
-    --primary-50: oklch(0.97 0.01 var(--primary-h));
-    --primary-100: oklch(0.92 0.03 var(--primary-h));
-    --primary-200: oklch(0.85 0.07 var(--primary-h));
-    --primary-300: oklch(0.75 0.12 var(--primary-h));
-    --primary-400: oklch(0.65 0.16 var(--primary-h));
-    --primary-500: oklch(0.58 0.16 var(--primary-h));
-    /* Matches #3b82f6 */
-    --primary-600: oklch(0.48 0.16 var(--primary-h));
-    --primary-700: oklch(0.38 0.16 var(--primary-h));
-    --primary-800: oklch(0.28 0.16 var(--primary-h));
-    --primary-900: oklch(0.18 0.16 var(--primary-h));
+    --primary-h: 221;
+    /* Re-adjusted to a cleaner blue */
+    --primary-50: oklch(0.97 0.015 var(--primary-h));
+    --primary-100: oklch(0.92 0.04 var(--primary-h));
+    --primary-200: oklch(0.85 0.09 var(--primary-h));
+    --primary-300: oklch(0.75 0.14 var(--primary-h));
+    --primary-400: oklch(0.65 0.19 var(--primary-h));
+    --primary-500: oklch(0.58 0.21 var(--primary-h));
+    --primary-600: oklch(0.48 0.21 var(--primary-h));
+    --primary-700: oklch(0.38 0.21 var(--primary-h));
+    --primary-800: oklch(0.28 0.21 var(--primary-h));
+    --primary-900: oklch(0.18 0.21 var(--primary-h));
 
     --secondary-h: 186;
     --secondary-c: 0.12;

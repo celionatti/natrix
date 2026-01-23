@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Natrix CSS v2.1 - Modern Library</title>
-  <link rel="stylesheet" href="/dist/natrix.min.css">
+  <title>Natrix UI - Premium CSS Framework</title>
+  <link rel="stylesheet" href="../src/natrix.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,364 +13,249 @@
     body {
       font-family: 'Outfit', sans-serif;
       background-color: var(--bg-body);
+      color: var(--text-color);
+      overflow-x: hidden;
     }
 
-    .demo-section {
-      padding: 4rem 0;
-      border-bottom: 1px solid var(--border-color);
+    .hero-section {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at top right, oklch(0.9 0.1 var(--primary-h) / 0.15), transparent 50%),
+        radial-gradient(circle at bottom left, oklch(0.9 0.1 var(--secondary-h) / 0.15), transparent 50%);
     }
 
-    .demo-title {
-      margin-bottom: 2rem;
-      color: var(--heading-color);
-      font-weight: 700;
-      letter-spacing: -0.025em;
+    .hero-orb {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      filter: blur(120px);
+      opacity: 0.1;
+      z-index: -1;
     }
 
-    .hero-bg {
-      background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.1), transparent 40%),
-        radial-gradient(circle at bottom left, rgba(20, 184, 166, 0.1), transparent 40%);
+    .hero-orb-1 {
+      top: -300px;
+      right: -200px;
+    }
+
+    .hero-orb-2 {
+      bottom: -300px;
+      left: -200px;
+    }
+
+    .nav-floating {
+      position: fixed;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(92%, 1200px);
+      z-index: 1000;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .feature-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid transparent;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary-200);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .section-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
     }
   </style>
 </head>
 
-<body class="hero-bg">
-  <!-- Main Navbar with Theme Toggle -->
-  <nav class="navbar navbar-sticky" id="main-nav">
-    <div class="container navbar-container">
-      <a href="#" class="navbar-brand">
-        <span style="font-size: 1.8rem;">NX</span> Natrix
-      </a>
-      <div class="flex items-center gap-4">
-        <button class="theme-toggle" id="theme-icon-toggle" aria-label="Toggle theme">
-          <svg class="sun-icon" viewBox="0 0 24 24">
+<body>
+  <!-- Floating Navbar -->
+  <nav class="nav-floating d-flex align-items-center justify-content-between">
+    <a href="#" class="navbar-brand font-bold text-2xl d-flex align-items-center gap-2">
+      <div style="width: 32px; height: 32px; background: var(--gradient-primary); border-radius: 8px;"></div>
+      Natrix UI
+    </a>
+
+    <div class="d-flex align-items-center gap-6">
+      <ul class="d-none d-md-flex gap-8 list-none m-0 p-0 font-medium">
+        <li><a href="#features" class="text-color text-decoration-none opacity-70 hover-opacity-100">Features</a></li>
+        <li><a href="/examples/feedback.html"
+            class="text-color text-decoration-none opacity-70 hover-opacity-100">Components</a></li>
+        <li><a href="/examples/navbars.html"
+            class="text-color text-decoration-none opacity-70 hover-opacity-100">Layouts</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-3">
+        <button class="theme-toggle btn btn-icon btn-ghost" id="theme-btn">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
             <path
               d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 000 1.41l1.41 1.41c.39.39 1.03.39 1.42 0s.39-1.03 0-1.42L7.41 4.58a.996.996 0 00-1.42 0zM15.17 13.76a.996.996 0 000 1.41l1.41 1.41c.39.39 1.03.39 1.42 0s.39-1.03 0-1.42l-1.41-1.41a.996.996 0 00-1.42 0zM4.58 15.17l-1.41 1.41c-.39.39-.39 1.03 0 1.42s1.03.39 1.42 0l1.41-1.41c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0zM17.66 5.99l1.41-1.41a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.41 1.41c-.39.39-.39 1.03 0 1.42s1.03.39 1.42 0z" />
           </svg>
-          <svg class="moon-icon" viewBox="0 0 24 24">
-            <path
-              d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
-          </svg>
         </button>
-        <button class="navbar-toggler" aria-label="Toggle navigation">
-          <span>☰</span>
-        </button>
+        <a href="#" class="btn btn-primary rounded-xl px-6">Download</a>
       </div>
-      <ul class="navbar-nav">
-        <li><a href="#components" class="active">Components</a></li>
-        <li><a href="#forms">Forms</a></li>
-        <li><a href="#data">Data</a></li>
-        <li><a href="#nav-variants">Nav Variants</a></li>
-      </ul>
     </div>
   </nav>
 
-  <!-- Mobile App Bars (Hidden on Desktop) -->
-  <div class="navbar-app-top">
-    <div class="navbar-app-actions">
-      <button class="theme-toggle" aria-label="Toggle theme">
-        <svg class="sun-icon" viewBox="0 0 24 24">
-          <path
-            d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 000 1.41l1.41 1.41c.39.39 1.03.39 1.42 0s.39-1.03 0-1.42L7.41 4.58a.996.996 0 00-1.42 0zM15.17 13.76a.996.996 0 000 1.41l1.41 1.41c.39.39 1.03.39 1.42 0s.39-1.03 0-1.42l-1.41-1.41a.996.996 0 00-1.42 0zM4.58 15.17l-1.41 1.41c-.39.39-.39 1.03 0 1.42s1.03.39 1.42 0l1.41-1.41c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0zM17.66 5.99l1.41-1.41a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.41 1.41c-.39.39-.39 1.03 0 1.42s1.03.39 1.42 0z" />
-        </svg>
-        <svg class="moon-icon" viewBox="0 0 24 24">
-          <path
-            d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
-        </svg>
-      </button>
-      <button class="btn btn-icon btn-ghost" onclick="showToast('Search', 'Search triggered', 'info')">🔍</button>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+
+    <div class="container text-center">
+      <div class="inline-block mb-6 animate-fade-in">
+        <span class="badge badge-pill badge-primary text-white px-4 py-2"
+          style="background: rgba(var(--primary-h), 100%, 50%, 0.1); color: var(--primary-600); border: 1px solid var(--primary-200);">✨
+          v2.2 Professional Release</span>
+      </div>
+      <h1 class="section-title text-gradient-primary">Build Beautifully.<br>Deploy Instantly.</h1>
+      <p class="text-xl text-muted mx-auto mb-10" style="max-width: 700px;">A lightweight, standard-compliant CSS
+        framework that feels like Bootstrap but styles like the future. Zero dependencies, maximum performance.</p>
+
+      <div class="d-flex justify-content-center gap-4">
+        <button class="btn btn-lg btn-primary px-10 rounded-xl shadow-xl"
+          onclick="showNotification('Welcome to Natrix UI! Check the bottom of the page for more.', 'success')">Get
+          Started Free</button>
+        <button class="btn btn-lg btn-ghost px-10 rounded-xl"
+          onclick="showToast('Documentation', 'Coming soon to a browser near you!', 'info')">View Docs</button>
+      </div>
+
+      <!-- Preview Mockup -->
+      <div class="mt-16 relative mx-auto" style="max-width: 1000px;">
+        <div class="card p-2 bg-glass rounded-2xl shadow-2xl">
+          <div class="card rounded-xl overflow-hidden" style="height: 400px; background: var(--bg-body);">
+            <!-- Simulated Dashboard Content -->
+            <div class="p-8 text-left">
+              <div class="d-flex justify-content-between align-items-center mb-8">
+                <h3 class="h4 mb-0">Project Overview</h3>
+                <div class="avatar-group">
+                  <div class="avatar avatar-sm"><img src="https://i.pravatar.cc/100?img=1"></div>
+                  <div class="avatar avatar-sm"><img src="https://i.pravatar.cc/100?img=2"></div>
+                  <div class="avatar avatar-sm"><img src="https://i.pravatar.cc/100?img=3"></div>
+                </div>
+              </div>
+              <div class="d-grid gap-6" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="card p-6 border shadow-sm">
+                  <div class="text-muted text-sm mb-2">Total Revenue</div>
+                  <div class="h3 font-bold mb-0 text-gradient-primary">$45,200</div>
+                </div>
+                <div class="card p-6 border shadow-sm">
+                  <div class="text-muted text-sm mb-2">Active Users</div>
+                  <div class="h3 font-bold mb-0 text-gradient-secondary">12.4k</div>
+                </div>
+                <div class="card p-6 border shadow-sm">
+                  <div class="text-muted text-sm mb-2">Completion</div>
+                  <div class="progress progress-sm mt-3">
+                    <div class="progress-bar progress-animated" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <a href="#" class="navbar-brand">Natrix App</a>
-  </div>
+  </section>
 
-  <div class="navbar-app-bottom">
-    <a href="#" class="nav-app-item active">
-      <span class="nav-app-icon">🏠</span>
-      <span class="nav-app-text">Home</span>
-    </a>
-    <a href="#" class="nav-app-item">
-      <span class="nav-app-icon">✨</span>
-      <span class="nav-app-text">Explore</span>
-    </a>
-    <a href="#" class="nav-app-item">
-      <span class="nav-app-icon">➕</span>
-      <span class="nav-app-text">Add</span>
-    </a>
-    <a href="#" class="nav-app-item">
-      <span class="nav-app-icon">🎯</span>
-      <span class="nav-app-text">Tasks</span>
-    </a>
-    <a href="#" class="nav-app-item">
-      <span class="nav-app-icon">👤</span>
-      <span class="nav-app-text">Profile</span>
-    </a>
-  </div>
+  <!-- Features Grid -->
+  <section id="features" class="py-24 bg-surface">
+    <div class="container text-center">
+      <h2 class="h1 font-bold mb-16">Designed for Developers</h2>
+      <div class="d-grid gap-8" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
 
-  <div class="container py-8">
-    <header class="text-center mb-16 relative">
-      <div class="inline-block mb-4">
-        <span class="badge badge-pill badge-primary text-white">v2.1 PRO</span>
+        <div class="card feature-card p-8 rounded-2xl text-left bg-body">
+          <div class="p-3 mb-6 d-inline-block rounded-xl"
+            style="background: var(--primary-100); color: var(--primary-600);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 17 22 12" />
+            </svg>
+          </div>
+          <h3 class="h4 font-bold mb-3">Modern Defaults</h3>
+          <p class="text-muted">Out-of-the-box support for Glassmorphism, OKLCH colors, and CSS Container Queries.</p>
+        </div>
+
+        <div class="card feature-card p-8 rounded-2xl text-left bg-body">
+          <div class="p-3 mb-6 d-inline-block rounded-xl"
+            style="background: var(--success-100); color: var(--success-600);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <h3 class="h4 font-bold mb-3">Bootstrap Familiarity</h3>
+          <p class="text-muted">Uses industry-standard naming conventions (d-flex, gap-4, col-md-6) for zero learning
+            curve.</p>
+        </div>
+
+        <div class="card feature-card p-8 rounded-2xl text-left bg-body">
+          <div class="p-3 mb-6 d-inline-block rounded-xl"
+            style="background: var(--danger-100); color: var(--danger-600);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="14.31" y1="8" x2="20.05" y2="17.94" />
+              <line x1="9.69" y1="8" x2="21.17" y2="8" />
+              <line x1="7.38" y1="12" x2="13.12" y2="2.06" />
+              <line x1="9.69" y1="16" x2="3.95" y2="6.06" />
+              <line x1="14.31" y1="16" x2="2.83" y2="16" />
+              <line x1="16.62" y1="12" x2="10.88" y2="21.94" />
+            </svg>
+          </div>
+          <h3 class="h4 font-bold mb-3">Lightning Fast</h3>
+          <p class="text-muted">Optimized CSS delivery under 15kb gzipped. No JavaScript required for core styling.</p>
+        </div>
+
       </div>
-      <h1 class="text-6xl font-bold mb-4 tracking-tight text-gradient-primary">Universal CSS Library</h1>
-      <p class="lead max-w-2xl mx-auto mb-8 text-xl text-muted">A premium, production-ready framework focused on visual
-        excellence and modern CSS power.</p>
-      <div class="flex flex-center gap-4">
-        <button class="btn btn-lg btn-primary btn-shimmer btn-magnetic"
-          onclick="showToast('Welcome!', 'Explore the new components below.', 'success')">Get Started</button>
-        <button class="btn btn-lg btn-outline-secondary btn-magnetic">Documentation</button>
-      </div>
-    </header>
+    </div>
+  </section>
 
-    <!-- Components Showcase -->
-    <section id="components" class="demo-section">
-      <h2 class="demo-title text-4xl">Creative Components</h2>
-
-      <div class="row gap-8">
-        <!-- Avatars -->
-        <div class="col-md-6">
-          <div class="card card-glass h-full">
-            <div class="card-body">
-              <h5 class="card-title">Avatars & Groups</h5>
-              <div class="flex items-center gap-4 mb-6">
-                <div class="avatar avatar-xl avatar-rounded"><img src="https://i.pravatar.cc/150?img=1" alt="Avatar">
-                </div>
-                <div class="avatar avatar-lg"><img src="https://i.pravatar.cc/150?img=2" alt="Avatar"></div>
-                <div class="avatar avatar-sm avatar-rounded">JD</div>
-              </div>
-              <div class="avatar-group">
-                <div class="avatar avatar-rounded"><img src="https://i.pravatar.cc/150?img=3" alt="Avatar"></div>
-                <div class="avatar avatar-rounded"><img src="https://i.pravatar.cc/150?img=4" alt="Avatar"></div>
-                <div class="avatar avatar-rounded"><img src="https://i.pravatar.cc/150?img=5" alt="Avatar"></div>
-                <div class="avatar avatar-rounded bg-primary text-white">+5</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Progress & Tooltips -->
-        <div class="col-md-6">
-          <div class="card card-glass h-full">
-            <div class="card-body">
-              <h5 class="card-title">Progress & Tooltips</h5>
-              <p class="mb-4">Hover over icons for <span class="text-primary font-bold"
-                  data-tooltip="Hello! I am a pure CSS tooltip." data-tooltip-pos="top">Tooltips</span>.</p>
-
-              <label>System Integrity</label>
-              <div class="progress mb-4">
-                <div class="progress-bar progress-animated" style="width: 75%"></div>
-              </div>
-
-              <label>Database Load</label>
-              <div class="progress progress-sm">
-                <div class="progress-bar progress-bar-danger" style="width: 40%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Forms Showcase -->
-    <section id="forms" class="demo-section">
-      <h2 class="demo-title text-4xl">Advanced Forms</h2>
-      <div class="row">
-        <div class="col-lg-10 offset-lg-1">
-          <div class="card card-glass">
-            <div class="card-body">
-              <div class="row gap-y-6">
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatName" placeholder="Name">
-                    <label for="floatName">Full Name</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="input-group">
-                    <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" placeholder="Username">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="check1" checked>
-                    <label class="form-check-label" for="check1">Active Status</label>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-check form-switch">
-                    <input type="checkbox" class="form-check-input" id="switch1">
-                    <label class="form-check-label" for="switch1">Toggle Notifications</label>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Component Options</button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Settings</a>
-                      <a class="dropdown-item" href="#">Profile</a>
-                      <div class="divider"></div>
-                      <a class="dropdown-item text-danger" href="#">Logout</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Navigation Showcase -->
-    <section id="nav-variants" class="demo-section">
-      <h2 class="demo-title text-4xl">Navigation Layouts</h2>
-      <p class="text-muted mb-8">Natrix supports multiple navigation patterns out of the box, from traditional to modern
-        app-style.</p>
-
-      <div class="row gap-8">
-        <div class="col-12 text-center mb-8">
-          <div class="flex flex-center gap-4 flex-wrap">
-            <a href="/examples/navbars.html" class="btn btn-outline-primary btn-magnetic">Navbar Variants</a>
-            <a href="/examples/forms.html" class="btn btn-outline-primary btn-magnetic">Form Samples</a>
-            <a href="/examples/tables.html" class="btn btn-outline-primary btn-magnetic">Table Styles</a>
-            <a href="/demo/index.html" class="btn btn-outline-primary btn-magnetic">Cards & Feedback</a>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <label class="mb-2">Traditional Centered</label>
-          <div class="card card-glass p-2">
-            <nav class="navbar navbar-centered"
-              style="position: static; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
-              <div class="container navbar-container">
-                <a href="#" class="navbar-brand">Logo</a>
-                <ul class="navbar-nav">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <label class="mb-2">Dark Variant</label>
-          <div class="card card-glass p-2">
-            <nav class="navbar navbar-dark" style="position: static; border-radius: var(--radius-md);">
-              <div class="container navbar-container">
-                <a href="#" class="navbar-brand">Brand</a>
-                <ul class="navbar-nav">
-                  <li><a href="#">Work</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-        <div class="col-12">
-          <label class="mb-2">Mobile App Style (Simulation)</label>
-          <div class="card card-glass p-4 text-center">
-            <p class="text-sm text-muted mb-4">On mobile devices (width < 768px), Natrix can switch to an app-like
-                experience with a top brand bar and a bottom icon navigation bar.</p>
-                <div class="flex gap-4 justify-center">
-                  <span class="badge badge-pill badge-primary">Top Bar: Right Brand, Left Menu</span>
-                  <span class="badge badge-pill badge-secondary">Bottom Bar: Fixed Icon Nav</span>
-                </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Data Showcase -->
-    <section id="data" class="demo-section">
-      <h2 class="demo-title text-4xl">Data & Layout</h2>
-
-      <div class="card card-glass overflow-hidden mb-8">
-        <div class="table-responsive">
-          <table class="table table-hover table-glass mb-0">
-            <thead>
-              <tr>
-                <th>Project Name</th>
-                <th>Lead</th>
-                <th>Status</th>
-                <th class="text-right">Budget</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="font-bold">Natrix Core</td>
-                <td>
-                  <div class="avatar avatar-xs avatar-rounded mr-2"><img src="https://i.pravatar.cc/100?img=11"></div>
-                  Alice
-                </td>
-                <td><span class="badge badge-pill badge-success">Completed</span></td>
-                <td class="text-right">$12,000</td>
-              </tr>
-              <tr class="table-shimmer">
-                <td>Loading Task...</td>
-                <td>Pending</td>
-                <td><span class="badge badge-pill badge-secondary">Syncing</span></td>
-                <td class="text-right">--</td>
-              </tr>
-              <tr>
-                <td class="font-bold">Admin Pro</td>
-                <td>
-                  <div class="avatar avatar-xs avatar-rounded mr-2"><img src="https://i.pravatar.cc/100?img=12"></div>
-                  Bob
-                </td>
-                <td><span class="badge badge-pill badge-warning">On Hold</span></td>
-                <td class="text-right">$8,500</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <nav class="pagination pagination-pill">
-        <a href="#" class="pagination-item disabled">&laquo;</a>
-        <a href="#" class="pagination-item active">1</a>
-        <a href="#" class="pagination-item">2</a>
-        <a href="#" class="pagination-item">3</a>
-        <a href="#" class="pagination-item">&raquo;</a>
-      </nav>
-    </section>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer footer-dark">
+  <!-- CTA Section -->
+  <section class="py-24">
     <div class="container">
-      <div class="row gap-8">
-        <div class="col-md-4">
-          <h5 class="footer-title">Natrix CSS</h5>
-          <p>Building the next generation of web interfaces with simplicity and power. Ultra-modern defaults for rapid
-            prototyping.</p>
-        </div>
-        <div class="col-md-2 offset-md-2">
-          <h5 class="footer-title">Links</h5>
-          <ul class="footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Components</a></li>
-            <li><a href="#">Showcase</a></li>
-          </ul>
-        </div>
-        <div class="col-md-2">
-          <h5 class="footer-title">Community</h5>
-          <ul class="footer-links">
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Discord</a></li>
-            <li><a href="#">Twitter</a></li>
-          </ul>
+      <div class="card p-12 text-center rounded-3xl bg-glass border-0 shadow-2xl relative overflow-hidden">
+        <div class="hero-orb hero-orb-1" style="opacity: 0.05;"></div>
+        <h2 class="h1 font-bold mb-6">Ready to upgrade your UI?</h2>
+        <p class="text-xl text-muted mb-10 mx-auto" style="max-width: 600px;">Join thousands of developers building
+          fast, accessible, and beautiful websites with Natrix.</p>
+        <div class="d-flex justify-content-center gap-4">
+          <button class="btn btn-lg btn-primary rounded-xl px-12">Start Building</button>
+          <a href="/examples/feedback.html" class="btn btn-lg btn-outline-primary rounded-xl px-12">View Components</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Natrix CSS. All rights reserved.</p>
-        <div class="footer-social">
-          <a href="#">𝕏</a>
-          <a href="#">🐙</a>
-          <a href="#">📸</a>
-        </div>
+    </div>
+  </section>
+
+  <footer class="py-12 border-t">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="font-bold opacity-50">&copy; 2026 Natrix UI Framework</div>
+      <div class="d-flex gap-6 opacity-50 font-medium">
+        <a href="#" class="text-color text-decoration-none">GitHub</a>
+        <a href="#" class="text-color text-decoration-none">Twitter</a>
+        <a href="#" class="text-color text-decoration-none">Docs</a>
       </div>
     </div>
   </footer>
 
-  <script src="/src/natrix.js"></script>
+  <script src="../src/natrix.js"></script>
 </body>
 
 </html>

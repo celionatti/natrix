@@ -241,7 +241,7 @@ function initMagneticButtons() {
   });
 }
 
-/* ========== TOASTS ========== */
+/* ========== TOASTS & NOTIFICATIONS ========== */
 function initToasts() {
   window.showToast = (title, message, type = 'primary', duration = 5000) => {
     let container = document.querySelector('.toast-container');
@@ -256,7 +256,7 @@ function initToasts() {
     toast.innerHTML = `
             <div class="toast-header">
                 <strong class="me-auto">${title}</strong>
-                <button type="button" class="btn-close ms-2 mb-1" style="border:none; background:none; cursor:pointer;" onclick="this.closest('.toast').remove()">&times;</button>
+                <button type="button" class="alert-close" style="position: static; padding: 0; margin-left: 1rem;" onclick="this.closest('.toast').remove()">&times;</button>
             </div>
             <div class="toast-body">
                 ${message}
@@ -270,8 +270,39 @@ function initToasts() {
 
     // Hide and remove
     setTimeout(() => {
-      toast.classList.remove('show');
-      setTimeout(() => toast.remove(), 400);
+      if (toast && toast.parentNode) {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 400);
+      }
+    }, duration);
+  };
+
+  // Floating notifications (top-right alerts)
+  window.showNotification = (message, type = 'primary', duration = 5000) => {
+    let container = document.querySelector('.toast-container');
+    if (!container) {
+      container = document.createElement('div');
+      container.className = 'toast-container';
+      document.body.appendChild(container);
+    }
+
+    const alert = document.createElement('div');
+    alert.className = `alert alert-${type} alert-dismissible alert-toast fade show`;
+    alert.innerHTML = `
+      <div class="alert-icon-content">${message}</div>
+      <button type="button" class="alert-close" onclick="this.closest('.alert').remove()">&times;</button>
+    `;
+
+    container.appendChild(alert);
+
+    // Auto remove
+    setTimeout(() => {
+      if (alert && alert.parentNode) {
+        alert.classList.remove('show');
+        alert.style.opacity = '0';
+        alert.style.transform = 'translateY(-20px)';
+        setTimeout(() => alert.remove(), 300);
+      }
     }, duration);
   };
 }
