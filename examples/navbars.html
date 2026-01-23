@@ -30,131 +30,172 @@
                         <li><a href="#" class="active">Home</a></li>
                         <li><a href="#">Features</a></li>
                         <li><a href="#">Pricing</a></li>
+                        <li><button class="btn btn-primary btn-sm ml-4">Get Started</button></li>
                     </ul>
                 </div>
             </nav>
         </section>
 
         <section class="mb-12">
-            <h3>2. Mobile App Style (Simulated View)</h3>
-            <p class="text-muted mb-6">On mobile, the brand moves to the center/right, and the navigation becomes a
-                <b>premium floating bottom bar</b> with micro-interactions.
-            </p>
+            <h3>2. Modern Glassmorphic Navbar</h3>
+            <p class="text-muted mb-4">Floating pill design with glassmorphism and premium blur. Perfect for hero
+                sections.</p>
+            <div class="py-12 px-6" style="background: var(--gradient-primary); border-radius: var(--radius-xl);">
+                <nav class="navbar glass"
+                    style="position: static; border-radius: 99px; max-width: 800px; margin: 0 auto; padding: 0.5rem 1.5rem;">
+                    <div class="navbar-container">
+                        <a href="#" class="navbar-brand" style="color: white;">Natrix</a>
+                        <ul class="navbar-nav">
+                            <li><a href="#" class="active" style="color: white; opacity: 1;">Explore</a></li>
+                            <li><a href="#" style="color: white; opacity: 0.8;">Showcase</a></li>
+                            <li><a href="#" style="color: white; opacity: 0.8;">Resources</a></li>
+                        </ul>
+                        <div class="navbar-actions">
+                            <button class="btn btn-white btn-sm px-6">Login</button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
 
-            <div
-                style="max-width: 375px; margin: 0 auto; border: 1px solid var(--border-color); border-radius: 2.5rem; height: 600px; position: relative; overflow: hidden; background: var(--bg-body); box-shadow: var(--shadow-2xl); border: 8px solid #1e293b;">
-                <!-- Top App Bar -->
-                <div class="navbar-app-top">
-                    <a href="#" class="navbar-brand">Natrix</a>
-                    <div class="navbar-app-actions">
-                        <button class="btn btn-icon btn-ghost">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <circle cx="11" cy="11" r="8" />
-                                <path d="m21 21-4.3-4.3" />
-                            </svg>
-                        </button>
-                        <button class="btn btn-icon btn-ghost">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
-                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
-                            </svg>
-                        </button>
+        <section class="mb-12">
+            <h3>3. Centered Brand Navbar</h3>
+            <nav class="navbar" style="position: static; border-radius: var(--radius-lg);">
+                <div class="container navbar-container" style="justify-content: center;">
+                    <ul class="navbar-nav" style="flex: 1; justify-content: flex-start;">
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Stories</a></li>
+                    </ul>
+                    <a href="#" class="navbar-brand" style="flex: 0; margin: 0 2rem;">NATRIX</a>
+                    <ul class="navbar-nav" style="flex: 1; justify-content: flex-end;">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+
+        <section class="mb-12">
+            <div class="row gap-8">
+                <div class="col-md-6">
+                    <h3>4. Sidebar Navigation (Desktop)</h3>
+                    <p class="text-muted mb-4">A sleek sidebar for dashboards or complex apps.</p>
+                    <div class="card p-0 overflow-hidden" style="height: 400px; display: flex;">
+                        <aside class="sidebar bg-surface border-end px-4 py-6"
+                            style="width: 240px; border-right: 1px solid var(--border-color);">
+                            <div class="navbar-brand mb-8 px-4">Natrix</div>
+                            <nav>
+                                <ul
+                                    style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li><a href="#" class="btn btn-ghost w-full justify-start active">Dashboard</a></li>
+                                    <li><a href="#" class="btn btn-ghost w-full justify-start">Analytics</a></li>
+                                    <li><a href="#" class="btn btn-ghost w-full justify-start">Settings</a></li>
+                                </ul>
+                            </nav>
+                        </aside>
+                        <div class="p-8 flex-1 bg-subtle">
+                            <h4 class="mb-4">Dashboard View</h4>
+                            <div class="row gap-4">
+                                <div class="col-6">
+                                    <div class="card p-4 h-24"></div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card p-4 h-24"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="p-8">
-                    <div class="mb-6">
-                        <div
-                            style="width: 100%; height: 160px; background: var(--gradient-primary); border-radius: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: white;">
-                            <span style="font-size: 2rem; font-weight: 700;">Dashboard</span>
+                <div class="col-md-6">
+                    <h3>5. Mobile Bottom Navbar</h3>
+                    <p class="text-muted mb-4">Premium floating pill with active states and center action.</p>
+                    <div
+                        style="max-width: 320px; margin: 0 auto; border: 8px solid #1e293b; border-radius: 2.5rem; height: 500px; position: relative; overflow: hidden; background: var(--bg-body); box-shadow: var(--shadow-2xl);">
+                        <!-- Simulated App Content -->
+                        <div class="p-6">
+                            <div class="card card-glass p-4 mb-4 shimmer-wrapper">
+                                <div style="height: 100px;"></div>
+                            </div>
+                            <h5 class="mb-2">Activity</h5>
+                            <div class="card p-3 mb-2" style="font-size: 0.8rem;">Recent Purchase - $24.00</div>
+                            <div class="card p-3 mb-2" style="font-size: 0.8rem;">Refund Processed - $12.00</div>
                         </div>
-                        <h4 class="mb-2">Welcome back!</h4>
-                        <p class="text-sm text-muted">The navigation below is fixed to the bottom and features a premium
-                            floating pill design with glassmorphism.</p>
-                    </div>
 
-                    <div class="card p-4 mb-4">
-                        <div class="d-flex align-items-center gap-3">
-                            <div
-                                style="width: 40px; height: 40px; border-radius: 10px; background: var(--primary-100); color: var(--primary-600); display: flex; align-items: center; justify-content: center;">
+                        <!-- Bottom App Bar -->
+                        <div class="navbar-app-bottom glass"
+                            style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem; border-radius: 99px;">
+                            <a href="#" class="nav-app-item active">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
-                                    <path d="M12 2v20" />
-                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                                 </svg>
-                            </div>
-                            <div>
-                                <div class="text-sm font-semibold">Total Balance</div>
-                                <div class="text-lg font-bold">$12,450.00</div>
-                            </div>
+                            </a>
+                            <a href="#" class="nav-app-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <path d="m21 21-4.3-4.3" />
+                                </svg>
+                            </a>
+                            <a href="#" class="nav-app-item nav-app-item-primary"
+                                style="background: var(--primary-600); border-radius: 50%; width: 48px; height: 48px; margin-top: -24px; box-shadow: var(--gradient-glow-primary);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="white" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </a>
+                            <a href="#" class="nav-app-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                                    <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+                                </svg>
+                            </a>
+                            <a href="#" class="nav-app-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Bottom App Bar (Floating Pill) -->
-                <div class="navbar-app-bottom" style="position: absolute; bottom: 1.25rem;">
-                    <a href="#" class="nav-app-item active">
-                        <span class="nav-app-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                <polyline points="9 22 9 12 15 12 15 22" />
-                            </svg>
-                        </span>
-                        <span class="nav-app-text">Home</span>
-                    </a>
-                    <a href="#" class="nav-app-item">
-                        <span class="nav-app-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <circle cx="11" cy="11" r="8" />
-                                <path d="m21 21-4.3-4.3" />
-                            </svg>
-                        </span>
-                        <span class="nav-app-text">Search</span>
-                    </a>
-                    <a href="#" class="nav-app-item nav-app-item-primary">
-                        <span class="nav-app-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="white" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19" />
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                            </svg>
-                        </span>
-                    </a>
-                    <a href="#" class="nav-app-item">
-                        <span class="nav-app-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
-                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
-                            </svg>
-                        </span>
-                        <span class="nav-app-text">Alerts</span>
-                    </a>
-                    <a href="#" class="nav-app-item">
-                        <span class="nav-app-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                                <circle cx="12" cy="7" r="4" />
-                            </svg>
-                        </span>
-                        <span class="nav-app-text">Profile</span>
-                    </a>
+        <section class="mb-12">
+            <h3>6. Top Navbar with Drawer Toggle</h3>
+            <div
+                style="max-width: 320px; margin: 0 auto; border: 8px solid #1e293b; border-radius: 2.5rem; height: 500px; position: relative; overflow: hidden; background: var(--bg-body);">
+                <div
+                    class="navbar bg-surface px-4 py-3 border-bottom d-flex align-items-center justify-content-between">
+                    <button class="btn btn-icon btn-ghost p-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <line x1="3" y1="18" x2="21" y2="18" />
+                        </svg>
+                    </button>
+                    <span class="font-bold">Natrix</span>
+                    <div style="width: 24px;"></div>
+                </div>
+                <!-- Simulated Content -->
+                <div class="p-6">
+                    <h5 class="mb-4">Application View</h5>
+                    <div class="card p-4">Click the menu icon to open the drawer.</div>
                 </div>
             </div>
         </section>
+
     </div>
     <script src="/src/natrix.js"></script>
 </body>

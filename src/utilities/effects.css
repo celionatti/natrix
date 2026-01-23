@@ -45,3 +45,42 @@
     animation-duration: 2s;
     filter: saturate(1.5) brightness(1.2);
 }
+
+/* Glassmorphism Utility */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+/* Premium Shadow */
+.shadow-premium {
+    box-shadow: 0 25px 50px -12px oklch(0 0 0 / 0.15), 
+                0 0 20px 0 oklch(var(--primary-h) 0.1 0.6 / 0.05);
+}
+
+/* Shine / Shimmer Effect */
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.shimmer-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
