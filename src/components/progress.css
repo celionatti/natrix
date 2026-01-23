@@ -3,6 +3,20 @@
  * Progress bars with animated gradients
  */
 
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .progress {
     display: flex;
     height: 0.75rem;

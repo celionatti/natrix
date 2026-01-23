@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natrix CSS - Feedback Example</title>
+    <link rel="stylesheet" href="/dist/natrix.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-body);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-8">
+        <a href="/demo/index.html" class="btn btn-sm btn-ghost mb-8">← Back to Demo</a>
+        <h1 class="mb-8">Feedback & Notifications</h1>
+
+        <div class="row gap-8">
+            <div class="col-md-6">
+                <div class="card card-glass p-6 mb-8">
+                    <h3>Alerts</h3>
+                    <div class="alert alert-primary">This is a primary alert for general information.</div>
+                    <div class="alert alert-success alert-icon">
+                        <span>✅</span>
+                        <div class="alert-icon-content">Action completed successfully!</div>
+                    </div>
+                    <div class="alert alert-danger alert-dismissible">
+                        Something went wrong.
+                        <button class="alert-close">&times;</button>
+                    </div>
+                </div>
+
+                <div class="card card-glass p-6">
+                    <h3>Toast Notifications</h3>
+                    <p class="text-muted mb-4">Click below to trigger a toast at the top-right corner.</p>
+                    <div class="flex gap-4">
+                        <button class="btn btn-success"
+                            onclick="showToast('Success', 'Profile updated!', 'success')">Launch Success</button>
+                        <button class="btn btn-danger"
+                            onclick="showToast('Error', 'Failed to save changes.', 'danger')">Launch Error</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card card-glass p-6 mb-8">
+                    <h3>Progress Bars</h3>
+                    <div class="mb-4">
+                        <label>Animated Gradient (Primary)</label>
+                        <div class="progress">
+                            <div class="progress-bar progress-animated" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label>Success Static</label>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label>Danger Thick</label>
+                        <div class="progress progress-lg">
+                            <div class="progress-bar progress-bar-danger" style="width: 90%">Critical</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-glass p-6">
+                    <h3>Tooltips</h3>
+                    <p class="text-muted mb-6">Hover over these elements to see the tooltips in action.</p>
+                    <div class="flex gap-8">
+                        <button class="btn btn-outline-primary" data-tooltip="Default top tooltip">Hover Top</button>
+                        <button class="btn btn-outline-secondary" data-tooltip="Bottom position"
+                            data-tooltip-pos="bottom">Hover Bottom</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/src/natrix.js"></script>
+</body>
+
+</html>

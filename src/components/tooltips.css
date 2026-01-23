@@ -14,8 +14,8 @@
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transition: all 0.2s ease;
-    z-index: 1070;
+    transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    z-index: 9999;
 }
 
 /* The bubble */

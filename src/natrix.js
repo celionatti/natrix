@@ -5,6 +5,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   initNavbar();
   initModals();
   initSidebar();
@@ -273,4 +274,32 @@ function initToasts() {
       setTimeout(() => toast.remove(), 400);
     }, duration);
   };
+}
+
+/* ========== THEME SWITCHER ========== */
+function initTheme() {
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+  const htmlElement = document.documentElement;
+
+  // Load theme from localStorage or OS preference
+  const savedTheme = localStorage.getItem('natrix-theme');
+  const osPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme) {
+    htmlElement.className = savedTheme;
+  } else if (osPrefersDark) {
+    htmlElement.className = 'dark';
+  } else {
+    htmlElement.className = 'light';
+  }
+
+  themeToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+      htmlElement.className = newTheme;
+      localStorage.setItem('natrix-theme', newTheme);
+    });
+  });
 }
