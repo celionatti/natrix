@@ -182,6 +182,18 @@ Natrix uses modern `clamp()` for fluid, responsive headings.
     <div>Item 1</div>
     <div>Item 2</div>
 </div>
+
+### Aspect Ratio & Object Fit
+
+```html
+<div class="aspect-video object-cover">
+    <img src="..." alt="...">
+</div>
+
+<div class="aspect-square w-32">
+    <div class="bg-primary-500 h-full">Square Content</div>
+</div>
+```
 ```
 
 ### Spacing
@@ -192,12 +204,20 @@ Modern units: `ch`, `lh`, and traditional `rem`.
 <!-- Traditional spacing -->
 <div class="p-4">Padding 1rem</div>
 <div class="m-8">Margin 3rem</div>
-<div class="mb-16">Bottom margin 6rem</div>
+<div class="mb-16">Bottom margin 8rem</div>
+<div class="p-32">Padding 16rem</div>
 
 <!-- Modern units -->
 <div class="my-lh">Vertical margin = 1 line-height</div>
 <div class="py-lh">Vertical padding = 1 line-height</div>
 <div class="gap-ch">Gap = 1 character width</div>
+
+### Z-Index
+
+```html
+<div class="z-0">Base</div>
+<div class="z-50">Top Layer</div>
+```
 ```
 
 ---
@@ -215,6 +235,10 @@ Modern units: `ch`, `lh`, and traditional `rem`.
 <button class="btn btn-warning">Warning</button>
 <button class="btn btn-info">Info</button>
 
+<!-- Premium Buttons -->
+<button class="btn btn-glass">Glass Button</button>
+<button class="btn btn-glow btn-primary">Glow Effect</button>
+
 <!-- Outline buttons -->
 <button class="btn btn-outline-primary">Outline</button>
 <button class="btn btn-ghost">Ghost</button>
@@ -226,6 +250,24 @@ Modern units: `ch`, `lh`, and traditional `rem`.
 
 <!-- Icon buttons -->
 <button class="btn btn-icon btn-primary">★</button>
+
+### Navbar
+
+```html
+<!-- Responsive Expanding Navbar -->
+<nav class="navbar navbar-expand-md">
+    <div class="container navbar-container">
+        <a href="#" class="navbar-brand">Natrix</a>
+        <button class="navbar-toggler" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+</nav>
+```
 ```
 
 ### Cards

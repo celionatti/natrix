@@ -145,6 +145,27 @@
     pointer-events: none;
 }
 
+/* Glow Card */
+.card-glow {
+    position: relative;
+}
+
+.card-glow::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-xl);
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.card-glow:hover::after {
+    opacity: 0.2;
+}
+
 /* ========== COLORED CARDS ========== */
 .card-primary {
     background: var(--gradient-primary);

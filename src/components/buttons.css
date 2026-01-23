@@ -202,6 +202,42 @@
     color: var(--dark-900);
 }
 
+/* Glass */
+.btn-glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow-md);
+}
+
+/* Glow */
+.btn-glow {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-glow::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.btn-glow:hover::before {
+    opacity: 0.6;
+}
+
 /* ========== OUTLINE VARIANTS ========== */
 /* Updated to be subtle borders, colorful text */
 .btn-outline-primary {

@@ -363,7 +363,75 @@
     background-color: var(--bg-subtle);
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========== RESPONSIVE NAVBAR EXPANSION ========== */
+/* Navbar expands at specific breakpoints, matching Bootstrap/Tailwind logic */
+
+/* Expansion Breakpoints */
+@media (min-width: 576px) {
+    .navbar-expand-sm .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-sm .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        box-shadow: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-expand-md .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-md .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        box-shadow: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        box-shadow: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar-expand-xl .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-expand-xl .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        box-shadow: none;
+    }
+}
+
+/* ========== RESPONSIVE (Mobile/Tablet Default) ========== */
 @media (max-width: 768px) {
     .navbar-toggler {
         display: block;

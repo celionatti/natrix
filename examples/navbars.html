@@ -177,7 +177,7 @@
                 style="max-width: 320px; margin: 0 auto; border: 8px solid #1e293b; border-radius: 2.5rem; height: 500px; position: relative; overflow: hidden; background: var(--bg-body);">
                 <div
                     class="navbar bg-surface px-4 py-3 border-bottom d-flex align-items-center justify-content-between">
-                    <button class="btn btn-icon btn-ghost p-1">
+                    <button class="btn btn-icon btn-ghost p-1" data-toggle="sidebar" data-target="#exampleSidebar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="3" y1="12" x2="21" y2="12" />
@@ -188,6 +188,26 @@
                     <span class="font-bold">Natrix</span>
                     <div style="width: 24px;"></div>
                 </div>
+
+                <!-- Hidden Sidebar for testing -->
+                <aside id="exampleSidebar" class="sidebar bg-surface border-right shadow-xl"
+                    style="position: absolute; top: 0; left: -280px; width: 280px; height: 100%; transition: left 0.3s ease; z-index: 1050;">
+                    <div class="p-6 border-bottom flex-between">
+                        <span class="font-bold">Menu</span>
+                        <button class="btn btn-icon btn-sm btn-ghost"
+                            onclick="document.getElementById('exampleSidebar').style.left = '-280px'">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <ul class="navbar-nav show"
+                            style="position: static; box-shadow: none; border: none; padding: 0;">
+                            <li><a href="#" class="btn btn-ghost w-full justify-start">Dashboard</a></li>
+                            <li><a href="#" class="btn btn-ghost w-full justify-start">Profile</a></li>
+                            <li><a href="#" class="btn btn-ghost w-full justify-start">Settings</a></li>
+                        </ul>
+                    </div>
+                </aside>
                 <!-- Simulated Content -->
                 <div class="p-6">
                     <h5 class="mb-4">Application View</h5>

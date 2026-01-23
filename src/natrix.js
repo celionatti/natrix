@@ -137,6 +137,12 @@ function initSidebar() {
 
       if (sidebar) {
         sidebar.classList.toggle('show');
+        
+        // Handle custom sidebar left positioning if it's the example one
+        if (sidebar.id === 'exampleSidebar') {
+          sidebar.style.left = sidebar.classList.contains('show') ? '0' : '-280px';
+        }
+
         createSidebarOverlay(sidebar);
       }
     });
