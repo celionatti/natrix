@@ -120,6 +120,26 @@
     color: white;
 }
 
+/* ========== NAVBAR CENTERED ========== */
+.navbar-centered .navbar-container {
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .navbar-centered .navbar-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .navbar-centered .navbar-nav {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
 .navbar-primary .navbar-nav a.active::after {
     background-color: white;
 }

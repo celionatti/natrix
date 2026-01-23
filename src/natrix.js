@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDismissibles();
   initDropdowns();
   initMagneticButtons();
+  initToasts();
 });
 
 /* ========== NAVBAR ========== */
@@ -237,4 +238,39 @@ function initMagneticButtons() {
       btn.style.transform = '';
     });
   });
+}
+
+/* ========== TOASTS ========== */
+function initToasts() {
+  window.showToast = (title, message, type = 'primary', duration = 5000) => {
+    let container = document.querySelector('.toast-container');
+    if (!container) {
+      container = document.createElement('div');
+      container.className = 'toast-container';
+      document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `
+            <div class="toast-header">
+                <strong class="me-auto">${title}</strong>
+                <button type="button" class="btn-close ms-2 mb-1" style="border:none; background:none; cursor:pointer;" onclick="this.closest('.toast').remove()">&times;</button>
+            </div>
+            <div class="toast-body">
+                ${message}
+            </div>
+        `;
+
+    container.appendChild(toast);
+
+    // Show
+    setTimeout(() => toast.classList.add('show'), 10);
+
+    // Hide and remove
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 400);
+    }, duration);
+  };
 }

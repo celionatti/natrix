@@ -1,6 +1,6 @@
 /*
- * Natrix CSS - Alerts
- * Alert and notification components
+ * Natrix CSS - Alerts & Toasts
+ * Alert, notification, and toast components
  */
 
 /* ========== BASE ALERT ========== */
@@ -72,30 +72,6 @@
     color: var(--dark-800);
 }
 
-.alert-purple {
-    background-color: var(--purple-50);
-    border-color: var(--purple-200);
-    color: var(--purple-800);
-}
-
-.alert-pink {
-    background-color: var(--pink-50);
-    border-color: var(--pink-200);
-    color: var(--pink-800);
-}
-
-.alert-orange {
-    background-color: var(--orange-50);
-    border-color: var(--orange-200);
-    color: var(--orange-800);
-}
-
-.alert-teal {
-    background-color: var(--teal-50);
-    border-color: var(--teal-200);
-    color: var(--teal-800);
-}
-
 /* ========== DISMISSIBLE ALERT ========== */
 .alert-dismissible {
     padding-right: 3rem;
@@ -136,17 +112,6 @@
 
 .alert-icon-content {
     flex: 1;
-}
-
-/* ========== BORDERED ALERTS ========== */
-.alert-border-left {
-    border-left-width: 4px;
-    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-}
-
-.alert-border-top {
-    border-top-width: 4px;
-    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 /* ========== BADGE ========== */
@@ -190,59 +155,70 @@
     background-color: var(--info-500);
 }
 
-.badge-dark {
-    background-color: var(--dark-800);
-}
-
-.badge-light {
-    background-color: var(--dark-200);
-    color: var(--dark-800);
-}
-
-.badge-purple {
-    background-color: var(--purple-500);
-}
-
-.badge-pink {
-    background-color: var(--pink-500);
-}
-
-.badge-orange {
-    background-color: var(--orange-500);
-}
-
-.badge-teal {
-    background-color: var(--teal-500);
-}
-
 .badge-pill {
     border-radius: var(--radius-full);
-    padding-left: 0.75em;
-    padding-right: 0.75em;
+    padding: 0.25em 0.75em;
 }
 
-.badge-lg {
-    padding: 0.375em 0.75em;
-    font-size: 0.875em;
+/* ========== TOAST NOTIFICATIONS ========== */
+.toast-container {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 1080;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 350px;
+    pointer-events: none;
 }
 
-.badge-outline {
-    background-color: transparent;
-    border: 1px solid currentColor;
+.toast {
+    pointer-events: auto;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+    opacity: 0;
+    transform: translateX(100%);
 }
 
-.badge-outline.badge-primary {
-    color: var(--primary-500);
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.badge-outline.badge-success {
-    color: var(--success-500);
+.toast-header {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--heading-color);
+    font-weight: 600;
 }
 
-.badge-outline.badge-danger {
-    color: var(--danger-500);
+.toast-body {
+    padding: 1rem;
+    font-size: var(--text-sm);
+    color: var(--text-color);
 }
 
-.badge-outline.badge-warning {
-    color: var(--warning-600);
+.toast-primary {
+    border-left: 4px solid var(--primary-500);
+}
+
+.toast-success {
+    border-left: 4px solid var(--success-500);
+}
+
+.toast-danger {
+    border-left: 4px solid var(--danger-500);
+}
+
+.toast-warning {
+    border-left: 4px solid var(--warning-500);
 }

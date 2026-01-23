@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Natrix CSS v2 - Demo</title>
+  <title>Natrix CSS v2.1 - Modern Library</title>
   <link rel="stylesheet" href="/dist/natrix.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +20,6 @@
       border-bottom: 1px solid var(--border-color);
     }
 
-    .demo-section:last-child {
-      border-bottom: none;
-    }
-
     .demo-title {
       margin-bottom: 2rem;
       color: var(--heading-color);
@@ -31,113 +27,89 @@
       letter-spacing: -0.025em;
     }
 
-    .color-box {
-      padding: 1.5rem;
-      border-radius: var(--radius-lg);
-      text-align: center;
-      font-size: 0.875rem;
-      font-weight: 600;
-      transition: transform 0.2s;
-    }
-
-    .color-box:hover {
-      transform: translateY(-5px);
-    }
-
-    .demo-grid>* {
-      background: var(--primary-100);
-      padding: 1rem;
-      border-radius: var(--radius-md);
-      text-align: center;
-      color: var(--primary-700);
-      font-weight: 500;
-    }
-
-    /* Hero Gradient Background */
     .hero-bg {
-      background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent 40%),
-        radial-gradient(circle at bottom left, rgba(20, 184, 166, 0.15), transparent 40%);
+      background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.1), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(20, 184, 166, 0.1), transparent 40%);
     }
   </style>
 </head>
 
 <body class="hero-bg">
+  <!-- Navbar -->
+  <nav class="navbar navbar-sticky">
+    <div class="container navbar-container">
+      <a href="#" class="navbar-brand">
+        <span style="font-size: 1.8rem;">NX</span> Natrix
+      </a>
+      <button class="navbar-toggler" aria-label="Toggle navigation">
+        <span>☰</span>
+      </button>
+      <ul class="navbar-nav">
+        <li><a href="#components" class="active">Components</a></li>
+        <li><a href="#forms">Forms</a></li>
+        <li><a href="#data">Data</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="container py-8">
     <header class="text-center mb-16 relative">
       <div class="inline-block mb-4">
-        <span class="badge badge-pill badge-primary-subtle text-primary font-bold tracking-wider uppercase text-xs">v2.1
-          Modern</span>
+        <span class="badge badge-pill badge-primary text-white">v2.1 PRO</span>
       </div>
-      <h1 class="text-6xl font-bold mb-4 tracking-tight text-gradient-primary">Natrix CSS</h1>
-      <p class="lead max-w-2xl mx-auto mb-8 text-xl">Production-ready, ultra-modern CSS framework powered by Container
-        Queries, OKLCH, and Subgrid.</p>
+      <h1 class="text-6xl font-bold mb-4 tracking-tight text-gradient-primary">Universal CSS Library</h1>
+      <p class="lead max-w-2xl mx-auto mb-8 text-xl text-muted">A premium, production-ready framework focused on visual
+        excellence and modern CSS power.</p>
       <div class="flex flex-center gap-4">
-        <a href="#components" class="btn btn-lg btn-primary btn-shimmer btn-magnetic shadow-colored-primary">Explore
-          Components</a>
-        <a href="admin.html" class="btn btn-lg btn-outline-secondary">Dashboard Pro</a>
+        <button class="btn btn-lg btn-primary btn-shimmer btn-magnetic"
+          onclick="showToast('Welcome!', 'Explore the new components below.', 'success')">Get Started</button>
+        <button class="btn btn-lg btn-outline-secondary btn-magnetic">Documentation</button>
       </div>
     </header>
 
-    <!-- BUTTONS -->
+    <!-- Components Showcase -->
     <section id="components" class="demo-section">
-      <h2 class="demo-title text-4xl">Buttons</h2>
-      <p class="text-muted mb-6">Gradient buttons with glow effects and pill shapes.</p>
+      <h2 class="demo-title text-4xl">Creative Components</h2>
 
-      <div class="card card-glass mb-8">
-        <div class="card-body">
-          <div class="flex flex-wrap gap-4 mb-8 items-center justify-center">
-            <button class="btn btn-primary btn-shimmer">Shimmer Primary</button>
-            <button class="btn btn-secondary btn-magnetic">Magnetic Secondary</button>
-            <button class="btn btn-success btn-animated">Animated Success</button>
-            <button class="btn btn-danger btn-shimmer">Danger Shimmer</button>
-            <button class="btn btn-warning">Warning</button>
-            <button class="btn btn-info">Info</button>
-            <button class="btn btn-dark">Dark Mode</button>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="flex flex-wrap gap-4 items-center justify-center">
-            <button class="btn btn-outline-primary btn-magnetic">Magnetic Outline</button>
-            <button class="btn btn-outline-danger">Outline Danger</button>
-            <button class="btn btn-ghost btn-shimmer">Ghost Shimmer</button>
-            <button class="btn btn-primary btn-icon text-lg btn-magnetic">★</button>
-            <button class="btn btn-secondary btn-icon text-lg btn-shimmer">♥</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTAINER QUERIES SHOWCASE -->
-    <section class="demo-section">
-      <h2 class="demo-title text-4xl">Adaptive Layouts</h2>
-      <p class="text-muted mb-6">Powered by Container Queries. These cards change layout based on their own width, not
-        the screen size.</p>
-
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card card-adaptive card-glass">
-            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=400"
-              class="card-img-top" alt="Demo">
+      <div class="row gap-8">
+        <!-- Avatars -->
+        <div class="col-md-6">
+          <div class="card card-glass h-full">
             <div class="card-body">
-              <h5 class="card-title">Adaptive Card</h5>
-              <p class="card-text">Try resizing this column. It will automatically switch from vertical to horizontal
-                layout.</p>
-              <button class="btn btn-sm btn-primary">Check it out</button>
+              <h5 class="card-title">Avatars & Groups</h5>
+              <div class="flex items-center gap-4 mb-6">
+                <div class="avatar avatar-xl avatar-rounded"><img src="https://i.pravatar.cc/150?img=1" alt="Avatar">
+                </div>
+                <div class="avatar avatar-lg"><img src="https://i.pravatar.cc/150?img=2" alt="Avatar"></div>
+                <div class="avatar avatar-sm avatar-rounded">JD</div>
+              </div>
+              <div class="avatar-group">
+                <div class="avatar avatar-rounded"><img src="https://i.pravatar.cc/150?img=3" alt="Avatar"></div>
+                <div class="avatar avatar-rounded"><img src="https://i.pravatar.cc/150?img=4" alt="Avatar"></div>
+                <div class="avatar avatar-rounded"><img src="https://i.pravatar.cc/150?img=5" alt="Avatar"></div>
+                <div class="avatar avatar-rounded bg-primary text-white">+5</div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-8">
-          <div class="card card-adaptive card-glass">
-            <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=400"
-              class="card-img-top" alt="Demo">
+
+        <!-- Progress & Tooltips -->
+        <div class="col-md-6">
+          <div class="card card-glass h-full">
             <div class="card-body">
-              <h5 class="card-title">Wide Container</h5>
-              <p class="card-text">Because this container is wider, the card automatically adopts a horizontal layout
-                using <code>@container</code> rules.</p>
-              <div class="flex gap-2">
-                <button class="btn btn-sm btn-secondary">Details</button>
-                <button class="btn btn-sm btn-outline-primary">Gallery</button>
+              <h5 class="card-title">Progress & Tooltips</h5>
+              <p class="mb-4">Hover over icons for <span class="text-primary font-bold"
+                  data-tooltip="Hello! I am a pure CSS tooltip." data-tooltip-pos="top">Tooltips</span>.</p>
+
+              <label>System Integrity</label>
+              <div class="progress mb-4">
+                <div class="progress-bar progress-animated" style="width: 75%"></div>
+              </div>
+
+              <label>Database Load</label>
+              <div class="progress progress-sm">
+                <div class="progress-bar progress-bar-danger" style="width: 40%"></div>
               </div>
             </div>
           </div>
@@ -145,46 +117,48 @@
       </div>
     </section>
 
-    <!-- FORMS -->
-    <section class="demo-section">
-      <h2 class="demo-title text-4xl">Forms</h2>
+    <!-- Forms Showcase -->
+    <section id="forms" class="demo-section">
+      <h2 class="demo-title text-4xl">Advanced Forms</h2>
       <div class="row">
-        <div class="col-lg-8 offset-lg-2">
+        <div class="col-lg-10 offset-lg-1">
           <div class="card card-glass">
             <div class="card-body">
-              <div class="row gap-y-4">
+              <div class="row gap-y-6">
                 <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" placeholder="John Doe">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatName" placeholder="Name">
+                    <label for="floatName">Full Name</label>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="john@example.com">
+                  <div class="input-group">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" placeholder="Username">
                   </div>
                 </div>
-                <div class="col-12">
-                  <div class="form-group">
-                    <label>Select Plan</label>
-                    <select class="form-control">
-                      <option>Basic Plan</option>
-                      <option>Pro Plan</option>
-                      <option>Enterprise</option>
-                    </select>
+                <div class="col-md-4">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check1" checked>
+                    <label class="form-check-label" for="check1">Active Status</label>
                   </div>
                 </div>
-                <div class="col-12">
-                  <label>Message</label>
-                  <textarea rows="4" placeholder="Tell us about your project..."></textarea>
-                </div>
-                <div class="col-12 flex items-center justify-between mt-2">
-                  <div class="form-switch">
-                    <input type="checkbox" id="subscribe" checked>
-                    <label for="subscribe">Subscribe to newsletter</label>
+                <div class="col-md-4">
+                  <div class="form-check form-switch">
+                    <input type="checkbox" class="form-check-input" id="switch1">
+                    <label class="form-check-label" for="switch1">Toggle Notifications</label>
                   </div>
-                  <button class="btn btn-primary">Send Message</button>
+                </div>
+                <div class="col-md-4">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Component Options</button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Settings</a>
+                      <a class="dropdown-item" href="#">Profile</a>
+                      <div class="divider"></div>
+                      <a class="dropdown-item text-danger" href="#">Logout</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -193,57 +167,97 @@
       </div>
     </section>
 
-    <!-- PALETTE -->
-    <section class="demo-section">
-      <h2 class="demo-title text-4xl">Color Palette</h2>
-      <p class="text-muted mb-8">A vibrant, consistent color system designed for modern UIs.</p>
+    <!-- Data Showcase -->
+    <section id="data" class="demo-section">
+      <h2 class="demo-title text-4xl">Data & Layout</h2>
 
-      <div class="grid grid-cols-2 grid-cols-md-3 grid-cols-lg-6 gap-6">
-        <div class="color-box bg-gradient-primary text-white shadow-colored-primary">Primary</div>
-        <div class="color-box bg-gradient-secondary text-white">Secondary</div>
-        <div class="color-box bg-gradient-success text-white">Success</div>
-        <div class="color-box bg-gradient-danger text-white">Danger</div>
-        <div class="color-box bg-gradient-warning text-white">Warning</div>
-        <div class="color-box bg-gradient-dark text-white">Dark</div>
+      <div class="card card-glass overflow-hidden mb-8">
+        <div class="table-responsive">
+          <table class="table table-hover table-glass mb-0">
+            <thead>
+              <tr>
+                <th>Project Name</th>
+                <th>Lead</th>
+                <th>Status</th>
+                <th class="text-right">Budget</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-bold">Natrix Core</td>
+                <td>
+                  <div class="avatar avatar-xs avatar-rounded mr-2"><img src="https://i.pravatar.cc/100?img=11"></div>
+                  Alice
+                </td>
+                <td><span class="badge badge-pill badge-success">Completed</span></td>
+                <td class="text-right">$12,000</td>
+              </tr>
+              <tr class="table-shimmer">
+                <td>Loading Task...</td>
+                <td>Pending</td>
+                <td><span class="badge badge-pill badge-secondary">Syncing</span></td>
+                <td class="text-right">--</td>
+              </tr>
+              <tr>
+                <td class="font-bold">Admin Pro</td>
+                <td>
+                  <div class="avatar avatar-xs avatar-rounded mr-2"><img src="https://i.pravatar.cc/100?img=12"></div>
+                  Bob
+                </td>
+                <td><span class="badge badge-pill badge-warning">On Hold</span></td>
+                <td class="text-right">$8,500</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      <div class="mt-8 grid grid-cols-2 grid-cols-md-4 gap-4">
-        <div class="p-4 rounded-lg bg-primary-subtle text-primary font-bold text-center">Primary Subtle</div>
-        <div class="p-4 rounded-lg bg-secondary-subtle text-secondary font-bold text-center">Secondary Subtle</div>
-        <div class="p-4 rounded-lg bg-success-subtle text-success font-bold text-center">Success Subtle</div>
-        <div class="p-4 rounded-lg bg-danger-subtle text-danger font-bold text-center">Danger Subtle</div>
-      </div>
-
-      <div class="mt-8 text-center">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#demoModal">Test Modal Interaction</button>
-      </div>
+      <nav class="pagination pagination-pill">
+        <a href="#" class="pagination-item disabled">&laquo;</a>
+        <a href="#" class="pagination-item active">1</a>
+        <a href="#" class="pagination-item">2</a>
+        <a href="#" class="pagination-item">3</a>
+        <a href="#" class="pagination-item">&raquo;</a>
+      </nav>
     </section>
-
-
-
-    <footer class="text-center py-12 text-muted border-t border-border-color mt-8">
-      <p class="font-medium mb-2">Natrix CSS v2</p>
-      <p class="text-sm opacity-70">&copy; 2025 - Built with ❤️ and gradients.</p>
-    </footer>
   </div>
 
-  <!-- DEMO MODAL (Moved to root) -->
-  <div class="modal modal-glass" id="demoModal">
-    <div class="modal-dialog">
-      <div class="modal-header">
-        <h5 class="modal-title">Glass Modal</h5>
-        <button class="modal-close" data-dismiss="modal">&times;</button>
+  <!-- Footer -->
+  <footer class="footer footer-dark">
+    <div class="container">
+      <div class="row gap-8">
+        <div class="col-md-4">
+          <h5 class="footer-title">Natrix CSS</h5>
+          <p>Building the next generation of web interfaces with simplicity and power. Ultra-modern defaults for rapid
+            prototyping.</p>
+        </div>
+        <div class="col-md-2 offset-md-2">
+          <h5 class="footer-title">Links</h5>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Components</a></li>
+            <li><a href="#">Showcase</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h5 class="footer-title">Community</h5>
+          <ul class="footer-links">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="modal-body">
-        <p>This is a glassmorphism modal dialog powered by Natrix JS. It has a beautiful backdrop blur and smooth
-          animation.</p>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-ghost" data-dismiss="modal">Close</button>
-        <button class="btn btn-primary">Save Changes</button>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Natrix CSS. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">𝕏</a>
+          <a href="#">🐙</a>
+          <a href="#">📸</a>
+        </div>
       </div>
     </div>
-  </div>
+  </footer>
 
   <script src="/src/natrix.js"></script>
 </body>

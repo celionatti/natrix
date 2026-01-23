@@ -1,0 +1,75 @@
+/*
+ * Natrix CSS - Tooltips & Popovers
+ * Pure CSS tooltip and popover system
+ */
+
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]::before,
+[data-tooltip]::after {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    z-index: 1070;
+}
+
+/* The bubble */
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    padding: 0.5rem 0.75rem;
+    background-color: var(--dark-900);
+    color: white;
+    font-size: var(--text-xs);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* The arrow */
+[data-tooltip]::after {
+    content: '';
+    border: 5px solid transparent;
+    border-top-color: var(--dark-900);
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+}
+
+[data-tooltip]:hover::before {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+[data-tooltip]:hover::after {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Variations */
+[data-tooltip-pos="bottom"]::before {
+    top: 100%;
+    bottom: auto;
+    transform: translateX(-50%) translateY(5px);
+}
+
+[data-tooltip-pos="bottom"]::after {
+    top: 100%;
+    bottom: auto;
+    border-top-color: transparent;
+    border-bottom-color: var(--dark-900);
+    transform: translateX(-50%) translateY(-5px);
+}
+
+[data-tooltip-pos="bottom"]:hover::before {
+    transform: translateX(-50%) translateY(10px);
+}
