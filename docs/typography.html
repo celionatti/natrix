@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography - Natrix CSS</title>
+    <link rel="stylesheet" href="../src/natrix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-color);
+        }
+
+        .sidebar {
+            width: 280px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: var(--bg-surface);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            z-index: 1050;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            padding: 4rem;
+            max-width: 1200px;
+        }
+
+        .nav-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-group-title {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .nav-link-doc {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-link-doc:hover {
+            color: var(--primary-600);
+            transform: translateX(4px);
+        }
+
+        .nav-link-doc.active {
+            color: var(--primary-600);
+            font-weight: 700;
+        }
+
+        pre {
+            background: var(--dark-900);
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: var(--radius-xl);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            position: relative;
+            border: 1px solid var(--dark-700);
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .example-box {
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            background-color: var(--bg-surface);
+            margin-bottom: 1.5rem;
+        }
+
+        .type-demo {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .type-demo:last-child {
+            border-bottom: none;
+        }
+
+        .type-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: block;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="mb-10 flex items-center gap-3">
+            <div style="width: 32px; height: 32px; background: var(--gradient-primary); border-radius: 10px;"></div>
+            <a href="index.html" class="font-bold text-2xl tracking-tighter text-color text-decoration-none">Natrix
+                UI</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Core Style</div>
+            <a href="colors.html" class="nav-link-doc"><span>🎨</span> Colors & OKLCH</a>
+            <a href="typography.html" class="nav-link-doc active"><span>✍️</span> Typography</a>
+            <a href="utilities.html#backgrounds" class="nav-link-doc"><span>🖼️</span> Backgrounds</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Components</div>
+            <a href="components.html#buttons" class="nav-link-doc">🔘 Buttons</a>
+            <a href="components.html#cards" class="nav-link-doc">🖼️ Cards</a>
+            <a href="components.html#forms" class="nav-link-doc">📝 Forms</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <h1 class="text-6xl font-bold mb-6 tracking-tight">Typography</h1>
+        <p class="text-2xl text-muted leading-relaxed mb-12">Elegant, responsive text scaling powered by
+            <code>clamp()</code> and the Outfit font system.</p>
+
+        <h2 class="h3 font-bold mb-6">Headings</h2>
+        <div class="example-box">
+            <div class="type-demo">
+                <span class="type-label">H1 (Fluid 2.5rem - 4.5rem)</span>
+                <h1 class="m-0">Modern Design Interface</h1>
+            </div>
+            <div class="type-demo">
+                <span class="type-label">H2 (Fluid 2rem - 3.5rem)</span>
+                <h2 class="m-0">The future of styled components</h2>
+            </div>
+            <div class="type-demo">
+                <span class="type-label">H3 (Fluid 1.75rem - 2.5rem)</span>
+                <h3 class="m-0">Lightweight and high performance</h3>
+            </div>
+        </div>
+        <pre><button class="copy-btn">Copy</button><code>&lt;h1&gt;Modern Design Interface&lt;/h1&gt;
+&lt;h2&gt;The future of styled components&lt;/h2&gt;
+&lt;h3&gt;Lightweight and high performance&lt;/h3&gt;</code></pre>
+
+        <h2 class="h3 font-bold mt-16 mb-6">Font Weight Utilities</h2>
+        <div class="example-box">
+            <p class="font-light text-2xl">Outfit Light (300)</p>
+            <p class="font-normal text-2xl">Outfit Normal (400)</p>
+            <p class="font-medium text-2xl">Outfit Medium (500)</p>
+            <p class="font-semibold text-2xl">Outfit Semibold (600)</p>
+            <p class="font-bold text-2xl">Outfit Bold (700)</p>
+            <p class="font-extrabold text-2xl">Outfit Extrabold (800)</p>
+        </div>
+        <pre><button class="copy-btn">Copy</button><code>&lt;p class="font-light"&gt;Light Weight&lt;/p&gt;
+&lt;p class="font-normal"&gt;Normal Weight&lt;/p&gt;
+&lt;p class="font-semibold"&gt;Semibold Weight&lt;/p&gt;
+&lt;p class="font-bold"&gt;Bold Weight&lt;/p&gt;</code></pre>
+
+        <h2 class="h3 font-bold mt-16 mb-6">Text Sizes</h2>
+        <div class="example-box">
+            <p class="text-xs">Extra Small (0.75rem)</p>
+            <p class="text-sm">Small (0.875rem)</p>
+            <p class="text-base">Base/Paragraph (1rem)</p>
+            <p class="text-lg">Large (1.125rem)</p>
+            <p class="text-xl">Extra Large (1.25rem)</p>
+            <p class="text-2xl">2X Large (1.5rem)</p>
+            <p class="text-3xl">3X Large (1.875rem)</p>
+        </div>
+        <pre><button class="copy-btn">Copy</button><code>&lt;p class="text-xs"&gt;Extra Small&lt;/p&gt;
+&lt;p class="text-sm"&gt;Small&lt;/p&gt;
+&lt;p class="text-lg"&gt;Large&lt;/p&gt;
+&lt;p class="text-3xl"&gt;3X Large&lt;/p&gt;</code></pre>
+    </main>
+
+    <script src="../src/natrix.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced UI - Natrix CSS</title>
+    <link rel="stylesheet" href="../src/natrix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-color);
+        }
+
+        .sidebar {
+            width: 280px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: var(--bg-surface);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            z-index: 1050;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            padding: 4rem;
+            max-width: 1200px;
+        }
+
+        .nav-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-group-title {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .nav-link-doc {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-link-doc:hover {
+            color: var(--primary-600);
+            transform: translateX(4px);
+        }
+
+        .nav-link-doc.active {
+            color: var(--primary-600);
+            font-weight: 700;
+        }
+
+        pre {
+            background: var(--dark-900);
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+            overflow-x: auto;
+            margin: 0;
+            position: relative;
+            border: 1px solid var(--dark-700);
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .example-box {
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+            background-color: var(--bg-surface);
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="mb-10 flex items-center gap-3">
+            <div style="width: 32px; height: 32px; background: var(--gradient-primary); border-radius: 10px;"></div>
+            <a href="index.html" class="font-bold text-2xl tracking-tighter text-color text-decoration-none">Natrix
+                UI</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Navigation</div>
+            <a href="navbars.html" class="nav-link-doc"><span>🔝</span> Navbars</a>
+            <a href="pagination-toasts.html" class="nav-link-doc active"><span>📟</span> Pagination & Toasts</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Base Style</div>
+            <a href="colors.html" class="nav-link-doc">🎨 Colors</a>
+            <a href="typography.html" class="nav-link-doc">✍️ Typography</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <h1 class="text-6xl font-bold mb-6 tracking-tight">Advanced UI</h1>
+        <p class="text-2xl text-muted leading-relaxed mb-12">Dynamic interface elements for data management and user
+            notifications.</p>
+
+        <!-- PAGINATION -->
+        <h2 class="h3 font-bold mt-20" id="pagination">Pagination</h2>
+        <div class="example-box">
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">»</a></li>
+                </ul>
+            </nav>
+        </div>
+        <pre><button class="copy-btn">Copy</button><code>&lt;ul class="pagination"&gt;
+    &lt;li class="page-item disabled"&gt;&lt;a class="page-link"&gt;«&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="page-item active"&gt;&lt;a class="page-link"&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="page-item"&gt;&lt;a class="page-link"&gt;2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <!-- TOASTS -->
+        <h2 class="h3 font-bold mt-24" id="toasts">Toasts & Notifications</h2>
+        <p class="text-muted">Floating alerts that appear and disappear after a duration.</p>
+
+        <div class="example-box">
+            <div class="flex flex-col gap-4" style="max-width: 350px;">
+                <div class="toast toast-success show" style="position: static !important; width: 100% !important;">
+                    <div class="toast-header">
+                        <strong>Success</strong>
+                        <button class="toast-close">&times;</button>
+                    </div>
+                    <div class="toast-body">Order processed successfully!</div>
+                </div>
+            </div>
+            <button class="btn btn-primary mt-6"
+                onclick="showToast('Hello!', 'This is a dynamic toast.', 'primary')">Launch Live Toast</button>
+        </div>
+        <pre><button class="copy-btn">Copy</button><code>&lt;!-- Programmatic usage in JS --&gt;
+showToast('Title', 'Message body...', 'success');
+
+&lt;!-- Manual HTML --&gt;
+&lt;div class="toast toast-primary show"&gt;...&lt;/div&gt;</code></pre>
+
+        <!-- PROGRESS -->
+        <h2 class="h3 font-bold mt-24" id="progress">Progress Bars</h2>
+        <div class="example-box">
+            <div class="mb-4">
+                <span class="type-label">Standard</span>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 45%;"></div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <span class="type-label">Animated</span>
+                <div class="progress">
+                    <div class="progress-bar progress-animated" style="width: 75%;"></div>
+                </div>
+            </div>
+        </div>
+        <pre><button class="copy-btn">Copy</button><code>&lt;div class="progress"&gt;
+    &lt;div class="progress-bar progress-animated" style="width: 75%;"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </main>
+
+    <script src="../src/natrix.js"></script>
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const code = btn.nextElementSibling.innerText;
+                navigator.clipboard.writeText(code);
+                btn.innerText = 'Copied!';
+                setTimeout(() => btn.innerText = 'Copy', 2000);
+            });
+        });
+    </script>
+</body>
+
+</html>

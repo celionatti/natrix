@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilities - Natrix CSS</title>
+    <link rel="stylesheet" href="../src/natrix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-color);
+        }
+
+        .sidebar {
+            width: 280px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: var(--bg-surface);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            z-index: 1050;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            padding: 4rem;
+            max-width: 1200px;
+        }
+
+        .nav-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-group-title {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .nav-link-doc {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-link-doc:hover {
+            color: var(--primary-600);
+            transform: translateX(4px);
+        }
+
+        .nav-link-doc.active {
+            color: var(--primary-600);
+            font-weight: 700;
+        }
+
+        pre {
+            background: var(--dark-900);
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: var(--radius-xl);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            position: relative;
+            border: 1px solid var(--dark-700);
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="mb-10 flex items-center gap-3">
+            <div style="width: 32px; height: 32px; background: var(--gradient-primary); border-radius: 10px;"></div>
+            <a href="index.html" class="font-bold text-2xl tracking-tighter text-color text-decoration-none">Natrix
+                UI</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Utilities</div>
+            <a href="#shadows" class="nav-link-doc active"><span>🌑</span> Shadows</a>
+            <a href="#glass" class="nav-link-doc"><span>🪟</span> Glassmorphism</a>
+            <a href="#effects" class="nav-link-doc"><span>✨</span> Effects</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <h1 class="text-6xl font-bold mb-6 tracking-tight">Utilities</h1>
+        <p class="text-2xl text-muted leading-relaxed mb-12">Helper classes to quickly adjust shadows, visibility, and
+            modern effects.</p>
+
+        <!-- SHADOWS -->
+        <h2 class="h3 font-bold mt-20" id="shadows">Shadows</h2>
+        <div class="row gap-4 mb-20">
+            <div class="col-md-3">
+                <div class="card p-4 shadow-sm text-center">shadow-sm</div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-4 shadow text-center">shadow</div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-4 shadow-md text-center">shadow-md</div>
+            </div>
+            <div class="col-md-3">
+                <div class="card p-4 shadow-lg text-center">shadow-lg</div>
+            </div>
+        </div>
+
+        <!-- GLASSMORHPISM -->
+        <h2 class="h3 font-bold mt-24" id="glass">Glassmorphism</h2>
+        <p class="text-muted">Apply a premium blurred background with <code>.bg-glass</code>.</p>
+        <div class="p-20 rounded-3xl mb-8" style="background: var(--gradient-primary); position: relative;">
+            <div class="card bg-glass p-8 rounded-2xl" style="max-width: 400px; margin: 0 auto;">
+                <h5 class="mb-0">Glass Card</h5>
+                <p class="text-sm opacity-80 mt-2">Beautifully blurred content area.</p>
+            </div>
+        </div>
+        <pre><button class="copy-btn">Copy</button><code>&lt;div class="bg-glass p-6 rounded"&gt;
+    &lt;!-- Blurred content --&gt;
+&lt;/div&gt;</code></pre>
+
+        <!-- EFFECTS -->
+        <h2 class="h3 font-bold mt-24" id="effects">Animated Effects</h2>
+        <div class="row gap-6">
+            <div class="col-md-6">
+                <div class="animated-gradient-border p-8 text-center rounded-2xl">
+                    <h5 class="mb-0">Gradient Border</h5>
+                </div>
+                <pre class="mt-4"><code>&lt;div class="animated-gradient-border"&gt;
+    ...
+&lt;/div&gt;</code></pre>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary btn-animated w-full p-8 font-bold">
+                    Animated Gradient Background
+                </button>
+                <pre class="mt-4"><code>&lt;button class="btn btn-animated"&gt;
+    ...
+&lt;/button&gt;</code></pre>
+            </div>
+        </div>
+    </main>
+
+    <script src="../src/natrix.js"></script>
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const code = btn.nextElementSibling.innerText;
+                navigator.clipboard.writeText(code);
+                btn.innerText = 'Copied!';
+                setTimeout(() => btn.innerText = 'Copy', 2000);
+            });
+        });
+    </script>
+</body>
+
+</html>

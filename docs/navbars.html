@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbars - Natrix CSS</title>
+    <link rel="stylesheet" href="../src/natrix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-color);
+        }
+
+        .sidebar {
+            width: 280px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: var(--bg-surface);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            z-index: 1050;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            padding: 4rem;
+            max-width: 1200px;
+        }
+
+        .nav-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-group-title {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .nav-link-doc {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-link-doc:hover {
+            color: var(--primary-600);
+            transform: translateX(4px);
+        }
+
+        .nav-link-doc.active {
+            color: var(--primary-600);
+            font-weight: 700;
+        }
+
+        pre {
+            background: var(--dark-900);
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+            overflow-x: auto;
+            margin: 0;
+            position: relative;
+            border: 1px solid var(--dark-700);
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .example-box {
+            padding: 4rem 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+            background-color: var(--bg-body);
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-preview-item {
+            margin-bottom: 6rem;
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="mb-10 flex items-center gap-3">
+            <div style="width: 32px; height: 32px; background: var(--gradient-primary); border-radius: 10px;"></div>
+            <a href="index.html" class="font-bold text-2xl tracking-tighter text-color text-decoration-none">Natrix
+                UI</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Navigation</div>
+            <a href="navbars.html" class="nav-link-doc active"><span>🔝</span> Navbars</a>
+            <a href="pagination-toasts.html" class="nav-link-doc"><span>📟</span> Pagination & Toasts</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Components</div>
+            <a href="components.html#buttons" class="nav-link-doc">🔘 Buttons</a>
+            <a href="components.html#cards" class="nav-link-doc">🖼️ Cards</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <h1 class="text-6xl font-bold mb-6 tracking-tight">Navbars</h1>
+        <p class="text-2xl text-muted leading-relaxed mb-12">Responsive navigation systems for landing pages, enterprise
+            apps, and mobile-first products.</p>
+
+        <!-- FLOATING NAVBAR -->
+        <h2 class="h4 font-bold mt-20" id="floating">Desktop Floating Navbar</h2>
+        <p class="text-muted">A modern floating bar with glassmorphism, perfect for high-impact landing pages.</p>
+
+        <div class="example-box">
+            <nav class="navbar navbar-expand-md"
+                style="width: 100%; border: 1px solid var(--border-color); border-radius: 1rem; background: var(--glass-bg); backdrop-filter: blur(10px);">
+                <div class="container navbar-container">
+                    <a href="#" class="navbar-brand">Natrix</a>
+                    <ul class="navbar-nav">
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                    <button class="btn btn-sm btn-primary">Join Now</button>
+                </div>
+            </nav>
+        </div>
+        <pre><button class="copy-btn">Copy</button><code>&lt;nav class="navbar navbar-expand-md glass"&gt;
+    &lt;div class="container navbar-container"&gt;
+        &lt;a href="#" class="navbar-brand"&gt;Natrix&lt;/a&gt;
+        &lt;ul class="navbar-nav"&gt;
+            &lt;li&gt;&lt;a href="#" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Links&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+        <!-- APP TOPBAR -->
+        <h2 class="h4 font-bold mt-24" id="app-top">Enterprise App Topbar</h2>
+        <div class="example-box" style="background: white; border: 1px solid #eee;">
+            <header class="navbar-app-top"
+                style="display: flex !important; position: static !important; border: 1px solid var(--border-color); border-radius: 8px;">
+                <span class="navbar-brand">Control Panel</span>
+                <div class="navbar-app-actions">
+                    <button class="btn btn-icon btn-ghost">🔔</button>
+                    <div class="avatar avatar-sm"><img src="https://i.pravatar.cc/100?img=11"></div>
+                </div>
+            </header>
+        </div>
+        <pre><button class="copy-btn">Copy</button><code>&lt;!-- Optimized for mobile-app and admin headers --&gt;
+&lt;header class="navbar-app-top"&gt;
+    &lt;span class="navbar-brand"&gt;App Brand&lt;/span&gt;
+    &lt;div class="navbar-app-actions"&gt;...&lt;/div&gt;
+&lt;/header&gt;</code></pre>
+
+        <!-- APP BOTTOM NAV -->
+        <h2 class="h4 font-bold mt-24" id="app-bottom">Mobile Bottom Navigation</h2>
+        <div class="example-box" style="height: 120px; background: #f8fafc;">
+            <nav class="navbar-app-bottom"
+                style="display: flex !important; position: absolute !important; bottom: 10px !important;">
+                <a href="#" class="nav-app-item active">🏠</a>
+                <a href="#" class="nav-app-item">🔍</a>
+                <a href="#" class="nav-app-item nav-app-item-primary">➕</a>
+                <a href="#" class="nav-app-item">🔔</a>
+                <a href="#" class="nav-app-item">👤</a>
+            </nav>
+        </div>
+        <pre><button class="copy-btn">Copy</button><code>&lt;nav class="navbar-app-bottom"&gt;
+    &lt;a href="#" class="nav-app-item active"&gt;Home Icon&lt;/a&gt;
+    &lt;a href="#" class="nav-app-item"&gt;Search Icon&lt;/a&gt;
+    &lt;a href="#" class="nav-app-item nav-app-item-primary"&gt;Add&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+    </main>
+
+    <script src="../src/natrix.js"></script>
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const code = btn.nextElementSibling.innerText;
+                navigator.clipboard.writeText(code);
+                btn.innerText = 'Copied!';
+                setTimeout(() => btn.innerText = 'Copy', 2000);
+            });
+        });
+    </script>
+</body>
+
+</html>

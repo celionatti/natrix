@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs Hub - Natrix CSS</title>
+    <link rel="stylesheet" href="../src/natrix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-color);
+        }
+
+        .sidebar {
+            width: 280px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: var(--bg-surface);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            z-index: 1050;
+            transition: transform 0.3s ease;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            padding: 4rem;
+            max-width: 1200px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .nav-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-group-title {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .nav-link-doc {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-link-doc:hover {
+            color: var(--primary-600);
+            transform: translateX(4px);
+        }
+
+        .nav-link-doc.active {
+            color: var(--primary-600);
+            font-weight: 700;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .doc-section {
+            margin-top: 5rem;
+            padding-top: 5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        code {
+            background: var(--primary-50);
+            color: var(--primary-700);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        pre {
+            background: var(--dark-900);
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: var(--radius-xl);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            position: relative;
+            border: 1px solid var(--dark-700);
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .mobile-doc-nav {
+            display: none;
+            position: sticky;
+            top: 0;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            z-index: 1040;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+                box-shadow: var(--shadow-2xl);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 2rem;
+            }
+
+            .mobile-doc-nav {
+                display: flex;
+            }
+        }
+
+        .highlight-card {
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            border-color: var(--primary-200);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Mobile Navigation -->
+    <div class="mobile-doc-nav">
+        <button class="btn btn-icon btn-ghost" data-toggle="sidebar" data-target="#sidebar">☰</button>
+        <span class="font-bold">Natrix Docs</span>
+        <div style="width: 40px;"></div>
+    </div>
+
+    <!-- Sidebar Documentation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="mb-10 flex items-center gap-3">
+            <div style="width: 32px; height: 32px; background: var(--gradient-primary); border-radius: 10px;"></div>
+            <a href="index.html" class="font-bold text-2xl tracking-tighter text-color text-decoration-none">Natrix
+                UI</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">Introduction</div>
+            <a href="index.html" class="nav-link-doc active">Introduction</a>
+            <a href="index.html#quick-start" class="nav-link-doc">Quick Start</a>
+            <a href="index.html#browser-support" class="nav-link-doc">Browser Support</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">Core Style</div>
+            <a href="colors.html" class="nav-link-doc"><span>🎨</span> Colors & OKLCH</a>
+            <a href="typography.html" class="nav-link-doc"><span>✍️</span> Typography</a>
+            <a href="utilities.html#backgrounds" class="nav-link-doc"><span>🖼️</span> Backgrounds</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">Layout & Grid</div>
+            <a href="layout.html" class="nav-link-doc"><span>📏</span> Grid System</a>
+            <a href="layout.html#flexbox" class="nav-link-doc"><span>↔️</span> Flexbox</a>
+            <a href="layout.html#containers" class="nav-link-doc"><span>📦</span> Containers</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">Components</div>
+            <a href="components.html#buttons" class="nav-link-doc"><span>🔘</span> Buttons</a>
+            <a href="components.html#cards" class="nav-link-doc"><span>🖼️</span> Cards</a>
+            <a href="components.html#forms" class="nav-link-doc"><span>📝</span> Forms</a>
+            <a href="components.html#alerts" class="nav-link-doc"><span>⚠️</span> Alerts & Badges</a>
+            <a href="navbars.html" class="nav-link-doc"><span>🔝</span> Navbars</a>
+            <a href="pagination-toasts.html" class="nav-link-doc"><span>📟</span> Pagination & Toasts</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">Utilities</div>
+            <a href="utilities.html" class="nav-link-doc"><span>⚡</span> All Utilities</a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <header class="mb-16">
+            <span class="badge badge-pill badge-primary mb-4 p-2 px-4 font-bold border">LATEST v2.2</span>
+            <h1 class="text-6xl font-bold mb-6 tracking-tight text-gradient-primary">Build faster.<br>Look better.</h1>
+            <p class="text-2xl text-muted leading-relaxed" style="max-width: 800px;">
+                Natrix UI is a professional-grade CSS framework that provides modern defaults,
+                premium glassmorphism, and a robust utility system. It's Bootstrap for the modern era.
+            </p>
+        </header>
+
+        <section id="quick-start" class="mb-20">
+            <h2 class="h3 font-bold mb-6">Quick Start</h2>
+            <p class="mb-6 opacity-80">Copy this code into your head and you're ready to build.</p>
+            <pre><button class="copy-btn">Copy</button><code>&lt;!-- Natrix CSS --&gt;
+&lt;link rel="stylesheet" href="https://cdn.natrix.ui/dist/natrix.css"&gt;
+
+&lt;!-- Natrix JS (for Modals, Sidebar, etc) --&gt;
+&lt;script src="https://cdn.natrix.ui/dist/natrix.js"&gt;&lt;/script&gt;</code></pre>
+        </section>
+
+        <!-- Feature Overview -->
+        <section class="mb-24">
+            <h2 class="h3 font-bold mb-8">Feature Showcase</h2>
+            <div class="feature-grid">
+                <a href="typography.html" class="card highlight-card p-8 h-full bg-surface text-decoration-none">
+                    <div class="h4 font-bold mb-3">✍️ Typography</div>
+                    <p class="text-sm text-muted">Fluid headings with <code>clamp()</code>, line-height based spacing,
+                        and refined weights.</p>
+                </a>
+                <a href="colors.html" class="card highlight-card p-8 h-full bg-surface text-decoration-none">
+                    <div class="h4 font-bold mb-3">🎨 Colors (OKLCH)</div>
+                    <p class="text-sm text-muted">Perceptually uniform color scale of 10 shades for every primary color.
+                    </p>
+                </a>
+                <a href="components.html#cards" class="card highlight-card p-8 h-full bg-surface text-decoration-none">
+                    <div class="h4 font-bold mb-3">🖼️ Cards & Glass</div>
+                    <p class="text-sm text-muted">Interactive hover cards and premium glassmorphism built-in.</p>
+                </a>
+                <a href="components.html#forms" class="card highlight-card p-8 h-full bg-surface text-decoration-none">
+                    <div class="h4 font-bold mb-3">📝 Forms</div>
+                    <p class="text-sm text-muted">Fully styled inputs, selects, toggles, and switches with focus states.
+                    </p>
+                </a>
+                <a href="components.html#buttons"
+                    class="card highlight-card p-8 h-full bg-surface text-decoration-none">
+                    <div class="h4 font-bold mb-3">🔘 Modern Buttons</div>
+                    <p class="text-sm text-muted">Glow effects, shimmer animations, and glass variants.</p>
+                </a>
+                <a href="layout.html" class="card highlight-card p-8 h-full bg-surface text-decoration-none">
+                    <div class="h4 font-bold mb-3">📐 Grid & Flex</div>
+                    <p class="text-sm text-muted">A familiar 12-column grid and modern flex utilities with gap support.
+                    </p>
+                </a>
+                <a href="navbars.html" class="card highlight-card p-8 h-full bg-surface text-decoration-none">
+                    <div class="h4 font-bold mb-3">🔝 Navbars</div>
+                    <p class="text-sm text-muted">Desktop floating bars, app topbars, and mobile bottom navigation.</p>
+                </a>
+                <a href="pagination-toasts.html" class="card highlight-card p-8 h-full bg-surface text-decoration-none">
+                    <div class="h4 font-bold mb-3">📟 Advanced UI</div>
+                    <p class="text-sm text-muted">Toasts, Notifications, Pagination, and Progress Bars.</p>
+                </a>
+            </div>
+        </section>
+
+        <section id="browser-support" class="doc-section">
+            <h2 class="h3 font-bold mb-6">Browser Support</h2>
+            <p class="mb-4">Natrix UI uses modern CSS features like <strong>OKLCH</strong>, <strong>Container
+                    Queries</strong>, and <strong>layers</strong>. It is supported in all modern greenfield browsers.
+            </p>
+            <table class="table-hover w-full">
+                <thead>
+                    <tr>
+                        <th class="text-left font-bold py-4">Browser</th>
+                        <th class="text-left font-bold py-4">Version</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-3">Chrome / Edge</td>
+                        <td class="py-3">111+</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3">Firefox</td>
+                        <td class="py-3">113+</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3">Safari</td>
+                        <td class="py-3">16.4+</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <footer class="mt-24 pt-12 border-top flex-between opacity-50">
+            <div>© 2026 Natrix UI Framework</div>
+            <div class="flex gap-6">
+                <a href="#" class="text-color text-decoration-none">GitHub</a>
+                <a href="#" class="text-color text-decoration-none">Changelog</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="../src/natrix.js"></script>
+    <script>
+        // Syntax highlighting imitation and copy function
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const code = btn.nextElementSibling.innerText;
+                navigator.clipboard.writeText(code);
+                btn.innerText = 'Copied!';
+                setTimeout(() => btn.innerText = 'Copy', 2000);
+            });
+        });
+    </script>
+</body>
+
+</html>

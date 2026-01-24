@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App - Natrix CSS Example</title>
+    <link rel="stylesheet" href="../src/natrix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-body);
+            padding-bottom: 6rem;
+        }
+
+        .mobile-shell {
+            max-width: 420px;
+            margin: 2rem auto;
+            border: 8px solid #1e293b;
+            border-radius: 3rem;
+            min-height: 800px;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-body);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .app-content {
+            padding: 2rem;
+            padding-bottom: 7rem;
+        }
+
+        .story-ring {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            padding: 2px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid var(--bg-body);
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mobile-shell">
+        <header class="navbar-app-top">
+            <span class="navbar-brand">Natrix Social</span>
+            <div class="navbar-app-actions">
+                <button class="btn btn-icon btn-ghost">🔔</button>
+                <button class="btn btn-icon btn-ghost">💬</button>
+            </div>
+        </header>
+
+        <div class="app-content">
+            <div class="flex gap-4 overflow-auto pb-6 no-scrollbar">
+                <div class="flex-none text-center">
+                    <div class="story-ring"><img src="https://i.pravatar.cc/100?img=1" class="story-avatar"></div>
+                    <span class="text-xs mt-1 block">You</span>
+                </div>
+                <div class="flex-none text-center opacity-70">
+                    <div class="story-ring" style="background: var(--dark-200);"><img
+                            src="https://i.pravatar.cc/100?img=2" class="story-avatar"></div>
+                    <span class="text-xs mt-1 block">Sarah</span>
+                </div>
+                <div class="flex-none text-center opacity-70">
+                    <div class="story-ring" style="background: var(--dark-200);"><img
+                            src="https://i.pravatar.cc/100?img=3" class="story-avatar"></div>
+                    <span class="text-xs mt-1 block">Mike</span>
+                </div>
+            </div>
+
+            <div class="card card-glow mb-6">
+                <div class="card-body p-0">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format"
+                        class="w-full aspect-video object-cover"
+                        style="border-radius: var(--radius-xl) var(--radius-xl) 0 0;">
+                    <div class="p-4">
+                        <div class="flex-between mb-2">
+                            <span class="font-bold">Neon Dreams</span>
+                            <span class="text-xs text-muted">2 hours ago</span>
+                        </div>
+                        <p class="text-sm text-muted">Explored the new cyberpunk districts yesterday. The lighting was
+                            unreal!</p>
+                        <div class="flex gap-3 mt-4">
+                            <button class="btn btn-xs btn-outline-primary rounded-full">❤️ 2.4k</button>
+                            <button class="btn btn-xs btn-outline-primary rounded-full">💬 12</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-6 rounded-2xl bg-glass border-0 shadow-md">
+                <h5 class="mb-2">Suggested for you</h5>
+                <div class="flex-between">
+                    <div class="flex items-center gap-3">
+                        <div class="avatar avatar-sm"><img src="https://i.pravatar.cc/100?img=5"></div>
+                        <div>
+                            <div class="text-sm font-bold">Designer.UI</div>
+                            <div class="text-xs text-muted">Followed by mike</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-xs btn-primary rounded-full px-4">Follow</button>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar-app-bottom glass">
+            <a href="#" class="nav-app-item active">
+                <span class="nav-app-icon">🏠</span>
+            </a>
+            <a href="#" class="nav-app-item">
+                <span class="nav-app-icon">🔍</span>
+            </a>
+            <a href="#" class="nav-app-item nav-app-item-primary">
+                <span class="nav-app-icon">➕</span>
+            </a>
+            <a href="#" class="nav-app-item">
+                <span class="nav-app-icon">🔔</span>
+            </a>
+            <a href="#" class="nav-app-item">
+                <span class="nav-app-icon">👤</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="../src/natrix.js"></script>
+</body>
+
+</html>

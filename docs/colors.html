@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors - Natrix CSS</title>
+    <link rel="stylesheet" href="../src/natrix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-color);
+        }
+
+        .sidebar {
+            width: 280px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: var(--bg-surface);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            z-index: 1050;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            padding: 4rem;
+            max-width: 1200px;
+        }
+
+        .nav-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-group-title {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .nav-link-doc {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-link-doc:hover {
+            color: var(--primary-600);
+            transform: translateX(4px);
+        }
+
+        .nav-link-doc.active {
+            color: var(--primary-600);
+            font-weight: 700;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .color-swatch {
+            height: 80px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0.75rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+        }
+
+        .swatch-label {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: black;
+            align-self: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="mb-10 flex items-center gap-3">
+            <div style="width: 32px; height: 32px; background: var(--gradient-primary); border-radius: 10px;"></div>
+            <a href="index.html" class="font-bold text-2xl tracking-tighter text-color text-decoration-none">Natrix
+                UI</a>
+        </div>
+        <div class="nav-group">
+            <div class="nav-group-title">Core Style</div>
+            <a href="colors.html" class="nav-link-doc active"><span>🎨</span> Colors & OKLCH</a>
+            <a href="typography.html" class="nav-link-doc"><span>✍️</span> Typography</a>
+            <a href="utilities.html#backgrounds" class="nav-link-doc"><span>🖼️</span> Backgrounds</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <h1 class="text-6xl font-bold mb-6 tracking-tight">Colors</h1>
+        <p class="text-2xl text-muted leading-relaxed mb-12">Natrix UI utilizes the OKLCH color space for vibrant,
+            perceptually uniform shades across the spectrum.</p>
+
+        <h2 class="h3 font-bold mb-6">Primary Blue</h2>
+        <div class="color-grid">
+            <div class="color-swatch bg-primary-50"><span class="swatch-label">50</span></div>
+            <div class="color-swatch bg-primary-100"><span class="swatch-label">100</span></div>
+            <div class="color-swatch bg-primary-200"><span class="swatch-label">200</span></div>
+            <div class="color-swatch bg-primary-300"><span class="swatch-label">300</span></div>
+            <div class="color-swatch bg-primary-400"><span class="swatch-label">400</span></div>
+            <div class="color-swatch bg-primary-500 text-white"><span class="swatch-label">500</span></div>
+            <div class="color-swatch bg-primary-600 text-white"><span class="swatch-label">600</span></div>
+            <div class="color-swatch bg-primary-700 text-white"><span class="swatch-label">700</span></div>
+            <div class="color-swatch bg-primary-800 text-white"><span class="swatch-label">800</span></div>
+            <div class="color-swatch bg-primary-900 text-white"><span class="swatch-label">900</span></div>
+        </div>
+
+        <h2 class="h3 font-bold mb-6">Secondary Teal</h2>
+        <div class="color-grid">
+            <div class="color-swatch bg-secondary-50"><span class="swatch-label">50</span></div>
+            <div class="color-swatch bg-secondary-500 text-white"><span class="swatch-label">500</span></div>
+            <div class="color-swatch bg-secondary-900 text-white"><span class="swatch-label">900</span></div>
+        </div>
+
+        <h2 class="h3 font-bold mb-6">Neutral Dark</h2>
+        <div class="color-grid">
+            <div class="color-swatch bg-dark-50"><span class="swatch-label">50</span></div>
+            <div class="color-swatch bg-dark-200"><span class="swatch-label">200</span></div>
+            <div class="color-swatch bg-dark-400 text-white"><span class="swatch-label">400</span></div>
+            <div class="color-swatch bg-dark-600 text-white"><span class="swatch-label">600</span></div>
+            <div class="color-swatch bg-dark-800 text-white"><span class="swatch-label">800</span></div>
+            <div class="color-swatch bg-dark-900 text-white"><span class="swatch-label">900</span></div>
+            <div class="color-swatch bg-dark-950 text-white" style="background-color: var(--dark-950);"><span
+                    class="swatch-label">950</span></div>
+        </div>
+
+        <h2 class="h3 font-bold mt-16 mb-6">Usage</h2>
+        <p class="mb-4">Use color classes for text and backgrounds using the following format:
+            <code>text-{color}-{shade}</code> or <code>bg-{color}-{shade}</code>.</p>
+        <pre><code>&lt;p class="text-primary-600"&gt;Primary Text&lt;/p&gt;
+&lt;div class="bg-success-50 p-4 rounded text-success-800"&gt;
+    Success Message
+&lt;/div&gt;</code></pre>
+    </main>
+
+    <script src="../src/natrix.js"></script>
+</body>
+
+</html>
