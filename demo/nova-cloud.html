@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Cloud | The Future of AI Infrastructure</title>
+    <link rel="stylesheet" href="../src/natrix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --mesh-color-1: var(--primary-400);
+            --mesh-color-2: var(--secondary-400);
+            --mesh-color-3: var(--purple-400);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-color);
+            transition: background-color 0.5s ease;
+            overflow-x: hidden;
+        }
+
+        /* Premium Mesh Gradient Background */
+        .mesh-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0.15;
+            filter: blur(120px);
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 50%, rgba(var(--primary-h), 0.05), transparent 70%);
+        }
+
+        .mesh-orb {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--mesh-color-1);
+            animation: moveOrb 20s infinite alternate cubic-bezier(0.45, 0, 0.55, 1);
+            opacity: 0.6;
+            mix-blend-mode: screen;
+        }
+
+        .dark .mesh-orb {
+            mix-blend-mode: screen;
+            opacity: 0.4;
+        }
+
+        .orb-1 {
+            width: 50vw;
+            height: 50vw;
+            top: -15vw;
+            right: -10vw;
+            background: var(--mesh-color-1);
+        }
+
+        .orb-2 {
+            width: 40vw;
+            height: 40vw;
+            bottom: -10vw;
+            left: -10vw;
+            background: var(--mesh-color-2);
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 35vw;
+            height: 35vw;
+            top: 30vh;
+            left: 20vw;
+            background: var(--mesh-color-3);
+            animation-delay: -10s;
+        }
+
+        @keyframes moveOrb {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(5vw, 5vh) scale(1.1);
+            }
+        }
+
+        /* Navbar Refinement */
+        .nav-nova {
+            position: fixed;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(92%, 1280px);
+            z-index: 1000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            border-radius: 2rem;
+            padding: 0.75rem 2rem;
+            box-shadow: var(--shadow-xl);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-nova.scrolled {
+            top: 1rem;
+            padding: 0.5rem 2rem;
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .nav-nova.scrolled {
+            background: rgba(15, 23, 42, 0.85);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Hero Redesign */
+        .hero-section {
+            padding-top: 14rem;
+            padding-bottom: 8rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: clamp(3.5rem, 9vw, 6.5rem);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--text-color) 30%, var(--primary-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Section Spacing & Utilities */
+        .section {
+            padding: 10rem 0;
+            position: relative;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1.25rem;
+            background: var(--bg-surface);
+            /* Replaced primary-50 for better integration */
+            color: var(--primary-600);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Premium Cards */
+        .card-nova {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            padding: 3rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-nova:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-300);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .card-nova::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(var(--primary-h), 0.06), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .card-nova:hover::before {
+            opacity: 1;
+        }
+
+        .icon-box {
+            width: 72px;
+            height: 72px;
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-500);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card-nova:hover .icon-box {
+            background: var(--primary-500);
+            color: white;
+            border-color: var(--primary-600);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Glass Dashboard Preview */
+        .dashboard-preview {
+            position: relative;
+            margin-top: 4rem;
+            border-radius: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            box-shadow: var(--shadow-2xl);
+            transform: perspective(1000px) rotateX(10deg) scale(0.95);
+            transition: transform 0.6s ease;
+        }
+
+        .hero-section:hover .dashboard-preview {
+            transform: perspective(1000px) rotateX(2deg) scale(1);
+        }
+
+        /* Utility Override */
+        .text-gradient-primary {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 991px) {
+            .nav-nova {
+                top: 0;
+                width: 100%;
+                border-radius: 0;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+
+            .hero-section {
+                padding-top: 8rem;
+                padding-bottom: 4rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .card-nova {
+                padding: 2rem;
+            }
+
+            /* Mobile Menu Styles */
+            .mobile-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-surface);
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: var(--shadow-xl);
+                padding: 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+                animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        /* Custom CTA Padding */
+        .cta-padding {
+            padding: 3rem 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .cta-padding {
+                padding: 6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Dynamic Background Orbs -->
+    <div class="mesh-bg">
+        <div class="mesh-orb orb-1"></div>
+        <div class="mesh-orb orb-2"></div>
+        <div class="mesh-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar nav-nova">
+        <div class="container-fluid flex items-center justify-between">
+            <!-- Brand -->
+            <a href="#" class="navbar-brand text-2xl font-black flex items-center gap-3">
+                <div
+                    class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-primary text-white shadow-lg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="tracking-tight">Nova</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="d-none d-lg-flex align-items-center gap-10 font-medium">
+                <a href="#features" class="text-color opacity-70 hover-opacity-100 transition-fast">Platform</a>
+                <a href="#solutions" class="text-color opacity-70 hover-opacity-100 transition-fast">Solutions</a>
+                <a href="#pricing" class="text-color opacity-70 hover-opacity-100 transition-fast">Pricing</a>
+                <a href="/docs/index.html" class="text-color opacity-70 hover-opacity-100 transition-fast">Docs</a>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <button id="themeToggle" class="btn btn-icon btn-ghost rounded-full" aria-label="Toggle Theme">
+                    <svg class="moon-icon w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun-icon d-none w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <a href="#"
+                    class="d-none d-sm-block btn btn-primary rounded-full px-6 font-bold shadow-colored-primary">
+                    Get Started
+                </a>
+                <button class="d-lg-none btn btn-ghost btn-icon navbar-toggler">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div class="navbar-nav mobile-menu">
+            <a href="#features" class="text-xl font-bold py-2 border-b border-border text-color opacity-80">Platform</a>
+            <a href="#solutions"
+                class="text-xl font-bold py-2 border-b border-border text-color opacity-80">Solutions</a>
+            <a href="#pricing" class="text-xl font-bold py-2 border-b border-border text-color opacity-80">Pricing</a>
+            <a href="/docs/index.html" class="text-xl font-bold py-2 text-color opacity-80">Docs</a>
+            <div class="pt-4 mt-2 flex gap-4">
+                <a href="#" class="btn btn-outline-primary w-full justify-center">Log In</a>
+                <a href="#" class="btn btn-primary w-full justify-center">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section container">
+        <div class="flex flex-col items-center">
+            <div class="section-tag animate-fade-in">
+                <span class="w-2 h-2 rounded-full bg-primary-500 mr-2 animate-pulse"></span>
+                Powered by Natrix Engine
+            </div>
+
+            <h1 class="hero-title">
+                Compute at the<br>
+                Speed of Thought.
+            </h1>
+
+            <p class="hero-subtitle">
+                Nova is the intelligent cloud layer for modern engineering teams. Zero-latency compute, distributed by
+                default, and secured by the edge.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-20">
+                <button class="btn btn-xl btn-primary rounded-2xl px-10 shadow-lg hover-transform">
+                    Start Building
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </button>
+                <button class="btn btn-xl btn-outline-default bg-surface rounded-2xl px-10 hover-transform">
+                    View Documentation
+                </button>
+            </div>
+
+            <!-- Dashboard Preview -->
+            <div class="container max-w-6xl px-4">
+                <div class="dashboard-preview bg-glass backdrop-blur-xl">
+                    <div class="rounded-xl overflow-hidden shadow-inner bg-body aspect-video relative group">
+                        <!-- Simulated UI (could be an image or iframe) -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-subtle text-muted font-medium">
+                            <iframe src="admin-dashboard.html"
+                                style="width: 100%; height: 100%; border: none; pointer-events: none;"></iframe>
+                            <!-- Fallback if iframe fails or for visual placeholder -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-bg-body to-transparent opacity-0 pointer-events-none group-hover:opacity-10 transition-opacity">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section container">
+        <div class="row items-end mb-20 px-4">
+            <div class="col-lg-6">
+                <span class="text-primary-600 font-bold uppercase tracking-wider text-sm mb-3 block">Technology</span>
+                <h2 class="text-5xl font-bold tracking-tight leading-tight">Built for the next decade of internet.</h2>
+            </div>
+            <div class="col-lg-5 ml-auto pt-4 pb-2">
+                <p class="text-xl text-muted leading-relaxed">We've architected a network that bypasses the limitations
+                    of traditional cloud providers, giving you raw power where you need it.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card-nova">
+                    <div class="icon-box">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Autonomous Scaling</h3>
+                    <p class="text-muted leading-relaxed mb-6 flex-grow-1">Our infrastructure automatically shifts
+                        resources to meet demand without a single line of config. Pay only for what you use.</p>
+                    <a href="#" class="text-primary-600 font-bold hover-underline flex items-center">Learn more <svg
+                            class="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-nova">
+                    <div class="icon-box">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Ultra-Low Latency</h3>
+                    <p class="text-muted leading-relaxed mb-6 flex-grow-1">With points of presence in 120 countries,
+                        your users are always milliseconds away from compute. Edge caching included.</p>
+                    <a href="#" class="text-primary-600 font-bold hover-underline flex items-center">View Map <svg
+                            class="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-nova">
+                    <div class="icon-box">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Hardened Security</h3>
+                    <p class="text-muted leading-relaxed mb-6 flex-grow-1">Identity-aware routing and automatic
+                        encryption at rest and in transit are standard. SOC2 Type II compliant.</p>
+                    <a href="#" class="text-primary-600 font-bold hover-underline flex items-center">Read Audit <svg
+                            class="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Divider -->
+    <div class="container py-24">
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent opacity-50"></div>
+    </div>
+
+    <!-- Final CTA -->
+    <section class="section py-20">
+        <div class="container text-center">
+            <div
+                class="card cta-padding rounded-3xl bg-glass border border-white/10 shadow-2xl relative overflow-hidden group">
+                <!-- Background Glow -->
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary-500/20 blur-[100px] rounded-full pointer-events-none group-hover:bg-primary-500/30 transition-colors duration-700">
+                </div>
+
+                <div class="relative z-10">
+                    <h2 class="text-5xl md:text-7xl font-black mb-8 tracking-tight">Ready to evolve?</h2>
+                    <p class="text-xl md:text-2xl text-muted mb-12 mx-auto max-w-2xl">
+                        Join the thousands of engineering teams scaling their vision on Nova Cloud today. Start for
+                        free, upgrade as you grow.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <button
+                            class="btn btn-xl btn-primary rounded-2xl px-12 shadow-colored-primary hover-scale">Create
+                            Account</button>
+                        <button
+                            class="btn btn-xl btn-ghost border border-border rounded-2xl px-12 hover:bg-surface">Contact
+                            Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-border bg-subtle/30">
+        <div class="container">
+            <div class="row gy-5 justify-between">
+                <div class="col-lg-4">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-primary text-white">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="font-bold text-2xl tracking-tight">Nova</span>
+                    </div>
+                    <p class="text-muted mb-8 leading-relaxed max-w-xs">
+                        Designing the future of distributed intelligence, one packet at a time. Built for developers, by
+                        developers.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="btn btn-icon btn-sm btn-ghost rounded-full text-muted hover:text-primary-600 hover:bg-primary-50">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="btn btn-icon btn-sm btn-ghost rounded-full text-muted hover:text-primary-600 hover:bg-primary-50">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="btn btn-icon btn-sm btn-ghost rounded-full text-muted hover:text-primary-600 hover:bg-primary-50">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="font-bold mb-6 text-foreground">Platform</h6>
+                    <ul class="list-none p-0 flex flex-col gap-3 text-muted">
+                        <li><a href="#" class="hover:text-primary-600 transition-colors">Compute</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition-colors">Edge Network</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition-colors">Object Storage</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition-colors">Databases</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="font-bold mb-6 text-foreground">Company</h6>
+                    <ul class="list-none p-0 flex flex-col gap-3 text-muted">
+                        <li><a href="#" class="hover:text-primary-600 transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition-colors">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="font-bold mb-6 text-foreground">Resources</h6>
+                    <ul class="list-none p-0 flex flex-col gap-3 text-muted">
+                        <li><a href="#" class="hover:text-primary-600 transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition-colors">API Reference</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition-colors">Status</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition-colors">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-16 mt-16 border-t border-border flex flex-col md:flex-row justify-between items-center gap-6 opacity-60 text-sm font-medium">
+                <div>© 2026 NOVA CLOUD INC. All rights reserved.</div>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-primary-600">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary-600">Terms of Service</a>
+                    <a href="#" class="hover:text-primary-600">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/natrix.js"></script>
+    <script>
+        // Navbar Scroll Handler
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav-nova');
+            if (window.scrollY > 20) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // Mouse Move Effect for Cards
+        document.querySelectorAll('.card-nova').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Refined Theme Toggler
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        const html = document.documentElement;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('nova-theme') || 'light';
+        html.className = savedTheme;
+        updateIcons(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.classList.toggle('dark');
+            const newTheme = isDark ? 'dark' : 'light';
+            html.classList.remove(isDark ? 'light' : 'dark');
+            localStorage.setItem('nova-theme', newTheme);
+            updateIcons(newTheme);
+            // Optional: Natrix Toast if available
+            if (window.natrix && window.natrix.toast) {
+                natrix.toast.show({
+                    title: 'Theme Updated',
+                    message: `Switched to ${newTheme} mode.`,
+                    type: 'success'
+                });
+            }
+        });
+
+        function updateIcons(theme) {
+            if (theme === 'dark') {
+                sunIcon.classList.remove('d-none');
+                moonIcon.classList.add('d-none');
+            } else {
+                sunIcon.classList.add('d-none');
+                moonIcon.classList.remove('d-none');
+            }
+        }
+    </script>
+</body>
+
+</html>
